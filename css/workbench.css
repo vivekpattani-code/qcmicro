@@ -1,0 +1,447 @@
+/* ==========================================================================
+   FSSAI Virtual Microbiology Lab - Dilution & Plating Workbench Styles
+   ========================================================================= */
+
+.workbench-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 100%;
+}
+
+/* 1. Tubes Shelf */
+.workbench-shelf {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.05) 100%);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: 20px;
+    box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.05);
+}
+
+.tubes-rack {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    justify-items: center;
+    align-items: end;
+    min-height: 180px;
+    background: rgba(0,0,0,0.15);
+    border-radius: var(--border-radius-md);
+    padding: 16px;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.tube-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    width: 60px;
+}
+
+.tube-slot:hover {
+    transform: translateY(-5px);
+}
+
+.tube-slot.active-target {
+    animation: tubeGlow 1s infinite alternate;
+}
+
+@keyframes tubeGlow {
+    from { box-shadow: 0 0 5px var(--color-cyan-glow); border-radius: var(--border-radius-sm); }
+    to { box-shadow: 0 0 15px var(--color-cyan); border-radius: var(--border-radius-sm); }
+}
+
+.tube-label {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-title);
+}
+
+/* Glass tube visual styling */
+.glass-tube {
+    width: 24px;
+    height: 120px;
+    border-radius: 0 0 12px 12px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-top: none;
+    position: relative;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.02) 40%, 
+        rgba(255, 255, 255, 0.15) 60%, 
+        rgba(255, 255, 255, 0.02) 100%
+    );
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.glass-tube::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2px;
+    width: 2px;
+    height: 100%;
+    background: rgba(255,255,255,0.15);
+}
+
+.liquid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80%; /* Liquid volume */
+    background: rgba(0, 229, 255, 0.2); /* Clear diluent */
+    transition: height 0.5s ease, background-color 0.8s ease;
+    border-radius: 0 0 10px 10px;
+}
+
+.stock-liquid {
+    background: rgba(230, 180, 50, 0.55); /* Amber cloudy sample */
+}
+
+.tube-volume {
+    font-family: var(--font-code);
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+/* 2. Workbench controls layout */
+.workbench-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr 1fr;
+    gap: 20px;
+}
+
+/* Pipette Control Panel */
+.workbench-tools {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.workbench-tools h4, .plating-panel h4, .incubator-colony-panel h4 {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-title);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 6px;
+}
+
+.pipette-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+/* Micropipette visual construct */
+.pipette-graphic-holder {
+    width: 32px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.pipette-plunger {
+    width: 14px;
+    height: 12px;
+    background: var(--color-primary);
+    border-radius: 4px 4px 0 0;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.2s ease;
+}
+
+.pipette-plunger.depressed {
+    transform: translateY(6px);
+}
+
+.pipette-barrel {
+    width: 18px;
+    height: 55px;
+    background: linear-gradient(135deg, #2d3855 0%, #151a26 100%);
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.pipette-tip {
+    width: 6px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 30% 100%);
+    position: relative;
+}
+
+.pipette-liquid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0%; /* Fluid height */
+    background: rgba(0, 229, 255, 0.4);
+    transition: height 0.3s ease, background-color 0.5s ease;
+}
+
+.pipette-button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+}
+
+.pipette-status {
+    font-size: 11px;
+    font-family: var(--font-code);
+    color: var(--color-cyan);
+}
+
+/* 3. Plating Area & Dishes */
+.plating-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.plating-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.pda-acidification {
+    background: rgba(255, 214, 0, 0.05);
+    border: 1px dashed rgba(255, 214, 0, 0.2);
+    padding: 10px;
+    border-radius: var(--border-radius-sm);
+}
+
+.pda-acidification .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    cursor: pointer;
+    color: var(--text-body);
+}
+
+.petri-dishes-holder {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.dish-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.dish-slot span {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* Petri dish styling */
+.petri-dish {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    background: rgba(255,255,255,0.01);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.8);
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.petri-dish:hover {
+    border-color: rgba(0, 229, 255, 0.4);
+    box-shadow: 0 8px 28px rgba(0, 229, 255, 0.1);
+}
+
+.agar-layer {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background: transparent; /* Changed dynamically by agar selection */
+    transition: background-color 0.5s ease;
+    opacity: 0.75;
+}
+
+.petri-fluid {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 0.35;
+    transition: background-color 0.5s ease;
+}
+
+.plate-canvas {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.dish-label {
+    font-family: var(--font-code);
+    font-size: 11.5px;
+    color: var(--color-cyan);
+}
+
+/* 4. Incubator & Colony Counter Panel */
+.incubator-colony-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.incubator-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0,0,0,0.12);
+    padding: 12px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.control-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--text-body);
+}
+
+.colony-counter-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 229, 255, 0.02);
+    border: 1px solid rgba(0, 229, 255, 0.1);
+    padding: 12px;
+    border-radius: var(--border-radius-md);
+}
+
+.counter-display {
+    background: #03080e;
+    color: var(--color-green);
+    font-family: var(--font-code);
+    font-size: 26px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    padding: 4px 0;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid #0f2430;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
+    text-shadow: 0 0 10px var(--color-green-glow);
+}
+
+/* 5. Floating Pipette Simulation (Gliding & Dipping) */
+.floating-pipette-graphic {
+    position: absolute;
+    width: 20px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: left 0.45s cubic-bezier(0.25, 0.8, 0.25, 1), top 0.45s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease, transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 99;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.floating-pipette-graphic .pipette-plunger {
+    width: 10px;
+    height: 10px;
+    background: var(--color-primary);
+    border-radius: 2px 2px 0 0;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.2s ease;
+}
+
+.floating-pipette-graphic .pipette-plunger.depressed {
+    transform: translateY(5px);
+}
+
+.floating-pipette-graphic .pipette-barrel {
+    width: 12px;
+    height: 50px;
+    background: linear-gradient(135deg, #2d3855 0%, #151a26 100%);
+    border: 1px solid var(--color-border);
+    border-radius: 1px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.floating-pipette-graphic .pipette-tip {
+    width: 5px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 30% 100%);
+    position: relative;
+}
+
+.floating-pipette-graphic .pipette-liquid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0%;
+    background: rgba(0, 229, 255, 0.4);
+    transition: height 0.3s ease, background-color 0.5s ease;
+}
+
+/* Dipping motion into tube or petri dish */
+.floating-pipette-graphic.dipping {
+    transform: translateY(45px);
+}
+
+/* Tip contamination glow indicators */
+.pipette-tip.tip-contaminated, 
+.floating-pipette-graphic .pipette-tip.tip-contaminated {
+    background: rgba(255, 193, 7, 0.4) !important; /* Yellow warning glow */
+    border-color: rgba(255, 193, 7, 0.8) !important;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.6) !important;
+    filter: drop-shadow(0 0 4px rgba(255, 193, 7, 0.8));
+}

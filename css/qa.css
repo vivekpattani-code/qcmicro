@@ -1,0 +1,368 @@
+/* ==========================================================================
+   FSSAI Virtual Microbiology Lab - QA & Calibration Module Styles
+   ========================================================================= */
+
+.qa-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.qa-selector-bar {
+    display: flex;
+    gap: 10px;
+    background: rgba(0,0,0,0.15);
+    padding: 6px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.qa-sub-tab {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.qa-sub-tab.active {
+    background: rgba(0, 229, 255, 0.1);
+    color: var(--color-cyan);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.qa-sub-viewport {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    min-height: 250px;
+}
+
+/* 1. Autoclave Visualizer */
+.autoclave-workbench, .bsc-workbench {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.autoclave-visualizer, .bsc-cabinet-drawing {
+    background: rgba(0,0,0,0.15);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    gap: 20px;
+    min-height: 260px;
+    position: relative;
+}
+
+.autoclave-chamber {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    border: 6px solid #455a64;
+    background: #263238;
+    position: relative;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.6), inset 0 0 20px rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.autoclave-door-seal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px solid rgba(255,255,255,0.05);
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.9);
+    border-radius: 14px;
+    pointer-events: none;
+    z-index: 5;
+    transition: background-color 0.5s ease;
+}
+
+.autoclave-door-seal.locked {
+    background-color: rgba(0, 229, 255, 0.05);
+    border-color: var(--color-cyan-glow);
+}
+
+.steam-vapors {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 80%);
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 2;
+}
+
+.steam-vapors.venting {
+    opacity: 1;
+    animation: steamFlurry 0.2s infinite alternate;
+}
+
+@keyframes steamFlurry {
+    from { filter: blur(4px) brightness(1.0); }
+    to { filter: blur(5px) brightness(1.2); }
+}
+
+.loaded-rack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 3;
+}
+
+.load-beaker {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 2px 2px 8px 8px;
+    width: 48px;
+    height: 60px;
+    font-size: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+}
+
+.process-indicator-strip {
+    background: #ffeb3b; /* Default yellow/cream unsterilized */
+    border: 1px solid rgba(0,0,0,0.3);
+    padding: 2px 8px;
+    font-size: 7.5px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    transition: background-color 2s ease, color 2s ease;
+}
+
+/* Sterile change strip */
+.process-indicator-strip.sterile {
+    background: #4a148c; /* Sterile Dark Purple */
+    color: #fff;
+}
+
+.gauge-rack {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Mechanical dial gauge */
+.dial-gauge {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #111522;
+    border: 3px solid #2d3855;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.dial-lbl {
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.dial-hand {
+    position: absolute;
+    top: 15px;
+    left: 37px;
+    width: 3px;
+    height: 25px;
+    background: var(--color-red);
+    transform-origin: bottom center;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 0 4px var(--color-red-glow);
+}
+
+.dial-hand::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: -2px;
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.dial-val {
+    font-family: var(--font-code);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-cyan);
+}
+
+.autoclave-controls, .bsc-controls {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.autoclave-switches {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0,0,0,0.12);
+    padding: 14px;
+    border-radius: var(--border-radius-md);
+}
+
+.autoclave-indicators {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.autoclave-indicators span {
+    color: var(--text-muted);
+}
+
+.autoclave-action-buttons {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 10px;
+}
+
+/* 2. Biosafety Cabinet Laminator */
+.hepa-grid {
+    background: #37474f;
+    border: 2px solid #263238;
+    color: var(--color-cyan);
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px;
+    width: 220px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    z-index: 3;
+}
+
+.hepa-flow {
+    position: absolute;
+    top: 52px;
+    width: 200px;
+    height: 120px;
+    background: linear-gradient(180deg, rgba(0, 229, 255, 0.12) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hepa-flow.running {
+    opacity: 1;
+    animation: windFlow 1.5s infinite linear;
+}
+
+@keyframes windFlow {
+    0% { background: linear-gradient(180deg, rgba(0, 229, 255, 0.15) 0%, rgba(0, 229, 255, 0.0) 100%); }
+    50% { background: linear-gradient(180deg, rgba(0, 229, 255, 0.22) 20%, rgba(0, 229, 255, 0.02) 100%); }
+    100% { background: linear-gradient(180deg, rgba(0, 229, 255, 0.15) 0%, rgba(0, 229, 255, 0.0) 100%); }
+}
+
+.bsc-working-space {
+    width: 220px;
+    height: 120px;
+    border: 4px solid #455a64;
+    border-top: none;
+    background: #101622;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+    border-radius: 0 0 12px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.airflow-readout {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 8px;
+    color: var(--text-muted);
+    font-family: var(--font-code);
+}
+
+.exposure-plate {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#bsc-canvas {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.bsc-indicators {
+    background: rgba(0,0,0,0.15);
+    border: 1px solid var(--color-border);
+    padding: 14px;
+    border-radius: var(--border-radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bsc-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5px;
+    color: var(--text-body);
+}
+
+.bsc-action-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.bsc-outcome-log {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px dashed var(--color-border);
+    padding: 12px;
+    border-radius: var(--border-radius-sm);
+    font-size: 11.5px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}

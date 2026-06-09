@@ -1,0 +1,436 @@
+/* ==========================================================================
+   FSSAI Virtual Microbiology Lab - Pathogen Identification Styles
+   ========================================================================= */
+
+.pathogen-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.pathogen-selector-bar {
+    display: flex;
+    gap: 10px;
+    background: rgba(0,0,0,0.15);
+    padding: 6px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.pathogen-sub-tab {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.pathogen-sub-tab.active {
+    background: rgba(0, 229, 255, 0.1);
+    color: var(--color-cyan);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.pathogen-sub-viewport {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    min-height: 250px;
+}
+
+/* 1. Staph Coagulase Test */
+.staph-workbench, .salm-workbench {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.staph-glassware, .tsi-glassware {
+    background: rgba(0,0,0,0.15);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 240px;
+}
+
+.coagulase-tube-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.coagulase-tube {
+    width: 24px;
+    height: 110px;
+    border-radius: 0 0 12px 12px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-top: none;
+    position: relative;
+    background: rgba(255,255,255,0.02);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    transition: transform 0.8s ease;
+    transform-origin: center 25px;
+}
+
+.coagulase-tube.tilted {
+    transform: rotate(75deg);
+}
+
+.coagulase-tube .cap {
+    position: absolute;
+    top: 0;
+    left: -2px;
+    right: -2px;
+    height: 12px;
+    background: #ff1744;
+    border-radius: 3px 3px 0 0;
+}
+
+.broth-plasma {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 0 0 10px 10px;
+    transition: all 0.8s ease;
+    transform-origin: bottom center;
+}
+
+/* Fluid tilt behavior */
+.coagulase-tube.tilted .broth-plasma.liquid-running {
+    transform: skewY(-40deg) scaleY(0.7) translateY(-20px);
+    width: 60%;
+    left: 20%;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.coagulase-tube.tilted .broth-plasma.clotted-firm {
+    /* Clot doesn't run, stays at the bottom of the tube */
+    transform: none;
+    background: rgba(240, 240, 240, 0.8);
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+.staph-controls, .salm-controls, .coliform-sim-actions {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.staph-controls h4, .salm-controls h4, .coliform-sim-actions h4 {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    color: var(--color-cyan);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 6px;
+}
+
+.staph-controls p, .salm-controls p {
+    font-size: 12.5px;
+    color: var(--text-body);
+}
+
+.test-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0,0,0,0.12);
+    padding: 14px;
+    border-radius: var(--border-radius-md);
+}
+
+.tilt-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 10px;
+}
+
+.test-outcome {
+    text-align: center;
+    font-family: var(--font-code);
+    font-size: 13px;
+    color: var(--color-yellow);
+    font-weight: 700;
+}
+
+/* 2. Salmonella TSI Slant */
+.tsi-slant-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.tsi-tube {
+    width: 24px;
+    height: 120px;
+    border-radius: 0 0 12px 12px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-top: none;
+    position: relative;
+    background: rgba(255,255,255,0.02);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+.slant-cap {
+    position: absolute;
+    top: 0;
+    left: -2px;
+    right: -2px;
+    height: 12px;
+    background: #00e5ff;
+    border-radius: 3px 3px 0 0;
+}
+
+.tsi-slant-agar {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: #d84315; /* Default Uninoculated Red-Orange (Acid slant will turn yellow) */
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 80%);
+    transition: background-color 0.8s ease;
+}
+
+.tsi-butt-agar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    background: #d84315; /* Uninoculated Red-Orange (Acid butt will turn yellow) */
+    border-radius: 0 0 10px 10px;
+    transition: background-color 0.8s ease;
+}
+
+.tsi-gas-crack {
+    position: absolute;
+    bottom: 25px;
+    left: 2px;
+    right: 2px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.8);
+    display: none; /* Displayed when gas splits agar */
+    border-top: 1px solid rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.tsi-h2s-black {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 38px;
+    background: linear-gradient(to top, #000000 0%, #111111 80%, rgba(255, 214, 0, 0.25) 100%);
+    opacity: 0; /* Opacity 1 when H2S blackening is positive */
+    border-radius: 0 0 10px 10px;
+    transition: opacity 0.8s ease;
+}
+
+.reaction-observations {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 10px;
+}
+
+.reaction-observations h5 {
+    font-size: 12px;
+    color: var(--text-title);
+    margin-bottom: 6px;
+}
+
+.reaction-observations ul {
+    list-style: none;
+    font-size: 11.5px;
+}
+
+.reaction-observations li {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+}
+
+/* 3. Coliform testing hierarchy */
+.coliform-workbench {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.coliform-flowchart {
+    display: grid;
+    grid-template-columns: 1fr 30px 1fr 30px 1fr;
+    align-items: center;
+    background: rgba(0,0,0,0.15);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: 16px;
+}
+
+.flow-step {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: 12px;
+    text-align: center;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.flow-step.inactive {
+    opacity: 0.35;
+}
+
+.flow-step.active-step {
+    border-color: var(--color-cyan-glow);
+    background: rgba(0, 229, 255, 0.03);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.1);
+}
+
+.step-num {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flow-step h5 {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    color: var(--text-title);
+    margin-bottom: 2px;
+}
+
+.flow-media {
+    font-family: var(--font-code);
+    font-size: 10.5px;
+    color: var(--color-cyan);
+    margin-bottom: 4px;
+}
+
+.flow-step p {
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+.flow-arrow {
+    display: flex;
+    justify-content: center;
+    color: var(--text-muted);
+}
+
+.coliform-sim-actions {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+}
+
+.coliform-action-card {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 20px;
+    align-items: center;
+    background: rgba(0,0,0,0.12);
+    padding: 16px;
+    border-radius: var(--border-radius-md);
+}
+
+.coliform-visual-box {
+    width: 160px;
+    height: 160px;
+    border-radius: var(--border-radius-md);
+    background: #060b13;
+    border: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#coliform-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.durham-container {
+    width: 22px;
+    height: 120px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 11px 11px 0 0;
+    position: relative;
+    background: rgba(0, 230, 118, 0.1); /* Saline broth */
+}
+
+.durham-vial {
+    position: absolute;
+    top: 30px;
+    left: 4px;
+    width: 10px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px 5px 0 0; /* Inverted Durham vial */
+    background: rgba(255,255,255,0.05);
+}
+
+.gas-bubble {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 6px;
+    height: 0px; /* Expands to show gas bubble */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 3px 3px 0 0;
+    transition: height 0.8s ease;
+}
+
+.coliform-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.coliform-details h5 {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    color: var(--text-title);
+}
+
+.coliform-details p {
+    font-size: 12px;
+    color: var(--text-body);
+}
+
+#coliform-button-set {
+    display: flex;
+    gap: 10px;
+}
