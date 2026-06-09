@@ -1,0 +1,725 @@
+MICROBIAL QUALITY CONTROL IN FOOD AND PHARMACEUTICAL INDUSTRIES
+Sr.
+Title of the Experiment
+Page no.
+Dates
+Sub-mission
+Signature
+1
+Analysis of labels of food products and discuss it as a regulation of FSSAI.
+1
+
+
+
+2
+Microscopic examination of food products.
+4
+
+
+
+3
+Aerobic plate counts of the given food products.
+7
+
+
+
+4
+Testing for pathogens in food products. (name of the pathogen/s)
+10
+
+
+
+5
+Antimicrobial effectiveness testing.
+13
+
+
+
+6
+Sterility testing of a pharmaceutical Product.
+17
+
+
+
+7
+Evaluation of Surface sterilization by Swab testing.
+20
+
+
+
+8
+Visit to Food &/or Pharmaceutical unit.
+22
+
+
+
+
+
+
+
+PRACTICAL 1
+Analysis of labels of food products and discuss it as a regulation of FSSAI.
+Aim: To analyse and interpret the labelling of packaged food products in accordance with FSSAI labelling regulations.
+Introduction:
+Food labels are an essential part of consumer rights and food safety regulations. In India, food labelling is governed by the Food Safety and Standards (Packaging and Labelling) Regulations, notified under the FSSAI (Food Safety and Standards Authority of India). These labels provide critical information to consumers about the nature, quality, safety, and nutritional value of the food product. The label also ensures that the product meets legal standards and allows traceability and accountability in the food supply chain.
+Objectives:
+To identify mandatory label components as per FSSAI.
+To understand nutritional declarations, claims, and safety messages.
+To discuss misleading or non-compliant labels (if any).
+
+FSSAI Mandated Labeling Components:
+1. Scope & Legal Framework
+* Established under the Food Safety and Standards (Labelling & Display) Regulations, 2020, these rules apply to all pre?packaged foods as well as display regulations for food-service premises and e-commerce platforms.
+* This compendium consolidates all amendments up to September 2021 to serve as a ready reference.
+2. ?? Mandatory Label Declarations (Chapter?5 Schedule I)
+Labels must include:
+* Name of the food (truthful & non-misleading)
+* Ingredient list in descending order of weight
+* FSSAI logo and 14?digit license number
+* Net quantity, batch/lot number
+* Date of manufacture/packing and expiry or  best before  date
+* Vegetarian (green symbol) or non vegetarian (brown symbol) mark 
+* Nutritional Information Panel (NIP) with macro-nutrients and calorie value 
+* Customer care details (address, phone/email) and storage instructions
+Check the online document for detailed guideline.
+Link: https://www.fssai.gov.in/upload/uploadfiles/files/Compendium_Labelling_Display_23_09_2021.pdf
+
+3. Logos & Claims
+* Fortified foods must display the official fortification logo and tagline  Sampoorna Poshan Swasth Jeevan  
+* Organic foods must carry the FSSAI-prescribed organic logo.
+* Prohibited claims include impermissible absolutes such as  100% natural  or  100% pure  to avoid misleading consumers.
+
+4. E?commerce & Food Service Display
+* Online platforms (Amazon, Flipkart, BigBasket) must display all mandatory label information before sale, except variable info like batch number, MFD/expiry date, etc. 
+* Food outlets with ? 10 outlets or a central license must display calorie info, allergen details, and veg/non?veg icons on menu cards prominently. 
+
+5.  Formatting Requirements
+* Veg / Non?veg symbols: Must meet minimum size based on principal display panel area:
+* ?100?cm  ? 3?mm diameter circle
+* 100 500?cm  ? 4?mm, etc. 
+* Nutrition information should be in a legible font, clear layout, and contrast background.
+
+6. Enforcement & Amendments
+The compendium reflects Amendment 1 (Sept 2021) and future amendments will be numbered and listed in the document footer, ensuring transparency
+
+The mandatory components on food labels include:
+S. No.
+Label Information
+Requirement
+1.
+Name of the Food
+Clearly stated and not misleading
+2.
+List of Ingredients
+All ingredients in descending order by weight
+3.
+Nutritional Information
+Energy, protein, fat, carbohydrate, sugar, salt
+4.
+Vegetarian/Non-Vegetarian Logo
+Green/brown symbol
+5.
+Declaration of Allergens
+Mandatory allergen information (e.g., gluten)
+6.
+FSSAI License Number
+14-digit FSSAI number
+7.
+Date Marking
+MFD, Best Before, Use By
+8.
+Batch/Code/Lot Number
+For traceability
+9.
+Net Quantity
+In appropriate units (g/mL)
+10.
+Name and Address of Manufacturer
+With contact details
+11.
+Instructions for Use/Storage
+If applicable
+
+
+
+Procedure
+Each student will:
+1. Collect and Bring:
+Any two packaged food products (snack, beverage, spice, dairy, etc.)
+2. Label Analysis Task:
+Fill out the following table for each product using information from the label:
+Parameter
+Product 1
+Product 2
+Name of Product
+
+
+FSSAI License Number
+
+
+Ingredient List Present?
+Yes / No
+Yes / No
+Nutritional Info Given?
+Yes / No
+Yes / No
+Allergen Info Mentioned?
+Yes / No
+Yes / No
+Vegetarian/Non-Veg Symbol
+Green / brown
+Green / brown
+Manufacturing & Expiry Date
+
+
+Batch No. / Lot No.
+
+
+Storage Instructions Given?
+Yes / No
+Yes / No
+Any Health/Nutritional Claim
+
+
+Label Fully Compliant?
+Yes / No (Give reason)
+Yes / No (Give reason)
+Any other Labels
+
+
+
+Result:
+
+
+Conclusion:
+
+
+PRACTICAL 2
+Microscopic examination of food products.
+Aim: To examine food samples under a microscope for the presence of microorganisms, foreign matter, or structural components to assess microbiological and physical quality.
+Introduction:
+Food can harbour a wide range of microorganisms such as bacteria, yeasts, molds, and spores, as well as foreign matter like insect fragments, starch granules, or plant tissues. These contaminants may enter during production, processing, packaging, or storage. Microscopic examination serves as a rapid, preliminary technique for the detection of such contaminants before performing more elaborate microbiological or biochemical analyses.
+This technique is especially useful for:
+* Detecting microbial spoilage
+* Identifying food adulteration
+* Visualizing structural components of food
+* Screening powdered or dried food products for insect fragments, mold, etc.
+It is used in food quality control labs, as per standards laid down by bodies like FSSAI, BIS, AOAC, and USP.
+Principle:
+A small quantity of the food sample is diluted or emulsified, and a thin smear is prepared on a microscope slide. Depending on the expected contaminants, appropriate stains are applied (e.g., methylene blue for bacteria, lactophenol cotton blue for fungi, iodine for starch granules). The stained or unstained smear is observed under a microscope to detect and identify microorganisms or physical contaminants.
+Requirements:
+* Selected food samples (milk, bread, spices, flour, etc.)
+* Clean glass slides and cover slips
+* Light microscope (with 10x, 40x, and 100x objectives)
+* Inoculating loop or sterile swabs
+* Distilled water or normal saline
+* Dropper or micropipette
+* Staining reagents:
+o Methylene Blue   for bacterial cells
+o Lactophenol Cotton Blue (LPCB)   for fungi
+o Iodine Solution   for starch granules
+* Forceps, scalpel, mortar & pestle
+* Bunsen burner or spirit lamp
+
+Procedure:
+A. Sample Preparation:
+* Solid samples (e.g., bread, flour):
+* Grind a small amount in sterile saline or distilled water using mortar and pestle.
+* Prepare a suspension.
+* Liquid samples (e.g., milk, juice):
+* Use directly or dilute if necessary.
+* Powdered samples (e.g., spices):
+* Suspend in sterile water and allow large particles to settle.
+B. Slide Preparation & Staining:
+1. Place a drop of suspension on a clean slide.
+2. Make a thin smear and allow it to air dry.
+3. Fix the smear by gently passing the slide over a flame.
+4. Stain as follows:
+* Methylene Blue: 1 2 minutes ? rinse ? air dry ? observe (for bacteria)
+* Lactophenol Cotton Blue: Apply drop ? cover slip ? observe directly (for molds)
+* Iodine Solution: Apply ? observe immediately (for starch or plant tissue)
+
+C. Microscopic Observation:
+* Start with low power (10x) to locate the area of interest.
+* Use high power (40x) or oil immersion (100x) for detailed observation.
+
+Note:
+* Cell morphology: cocci, bacilli, yeast cells, fungal hyphae
+* Staining reaction
+* Presence of debris, starch granules, or foreign matter
+
+Prepare the observation table as per the format given below
+Example of observations
+Food Sample
+Stain Used
+Organism/Structure Observed
+Magnification Used
+Interpretation
+Milk
+Methylene Blue
+Rod-shaped bacteria
+100x oil
+Bacterial contamination
+Bread
+LPCB
+Septate hyphae, conidia
+40x
+Mold growth/spoilage
+Flour
+Iodine
+Starch granules
+10x
+Indicates carbohydrate presence
+Turmeric Powder
+Unstained
+Foreign fibers, mold spores
+40x
+Possible adulteration
+Fruit Juice
+Methylene Blue
+Yeast cells (oval, budding)
+40x
+Yeast fermentation
+Result:
+
+
+
+
+Interpretation:
+
+
+
+
+PRACTICAL 3
+Aerobic plate counts of the given food products.
+Aim: To determine the total viable count (TVC) of aerobic mesophilic bacteria present in a given food sample using the pour plate method, following FSSAI microbiological standards.
+Introduction:
+The Total Aerobic Mesophilic Plate Count, commonly referred to as the Aerobic Plate Count (APC) or Standard Plate Count, is the most widely used general indicator of bacterial populations in food. This method does not differentiate types of bacteria. It is only used to obtain general information on the sanitary quality of products, manufacturing practices, raw materials, processing conditions, handling practices and shelf life.
+This method is applicable to those food product categories and their subcategories as mentioned in the Appendix B tables of Food Safety and Standards (Food Products Standards and Food Additives) Regulations, 2011 and amendments (Gazette notifications) issued from time to time.
+Method No. FSSAI 15.001:2024
+Principle: A specified quantity of homogenised food sample is either dispensed into an empty Petri dish, mixed with a specified molten agar medium or surface plated on a solid agar culture medium.  Other plates are prepared under the same conditions using decimal dilutions of the test sample or the initial suspension. The plates are incubated under aerobic conditions at 30   1  C for 72 h. The number of microorganisms per gram or millilitre of sample is calculated from the number of colonies obtained on the plates containing fewer than 300 colonies for 90-100mm plates and 730 colonies for 140mm plates.
+Requirement:
+* Food sample (e.g., milk, curd, juice, etc.)
+* Sterile Peptone water (0.1%)
+* Sterile Plate Count Agar (PCA) plates
+* Sterile pipettes (1 ml and 10 ml)
+* Sterile test tubes
+* Bunsen burner or spirit lamp
+* Incubator
+Procedure:
+1. Sample Preparation:
+    a. Homogenise 10 g or 10 ml of food sample in 90 ml of sterile 0.1% peptone water to make a 10?  dilution.
+    b. Prepare serial decimal dilutions up to 10?? depending on expected microbial load.
+2. Plate Preparation (Pour Plate Method):
+a. Take 1 ml from the appropriate dilution and transfer it into a sterile Petri dish.
+b. Pour ~15 20 ml of molten Plate Count Agar (PCA) (cooled to 45 50 C) into the dish.
+c. Gently swirl to mix thoroughly.
+d. Allow the agar to solidify.
+3. Incubation:
+a. Invert the plates and incubate at 30 C for 48   2 hours.
+
+Observation:
+* After incubation, count colonies on plates with 30 to 300 CFU.
+* Calculate the number of colony-forming units per gram or mL of sample.
+
+Calculation
+CFU per ml or gm=(Number of colonies Dilution factor?)/(Volume plates ml)
+
+Interpretation
+FSSAI Appendix B microbiological criteria for milk, fruit juice, and ice cream.
+Product
+Test Organism
+n
+c
+m (CFU/mL or g)
+M (CFU/mL or g)
+Interpretation Rule
+Milk
+Aerobic Plate Count
+5
+1
+5   10?
+5   10?
+Max 1 sample >?m but ??M; none >?M
+Fruit Juice
+Aerobic Plate Count
+5
+1
+1   10?
+1   10?
+Same as above
+Ice Cream
+Aerobic Plate Count
+5
+1
+5   10 
+5   10?
+Max 1 sample >?m but ??M
+Note:
+n: number of samples to test
+c: allowable number of samples with results between m and M
+m: acceptable limit
+M: maximum limit
+If any result >?M or if more than c results fall between m and M ? unsatisfactory
+
+Result:
+The Aerobic Plate Count of the given food sample is ___________CFU/g or CFU/ml.
+Interpretation:
+
+
+
+
+
+PRACTICAL 4
+Testing for pathogens in food products.
+Aim: To detect the presence of coliform bacteria in water using selective media as per FSSAI guidelines.
+Introduction: Coliforms are a broad group of aerobic or facultative anaerobic, rod-shaped, gram-negative non-spore forming bacteria which can ferment lactose with the production of acid and gas when incubated at 32 37 C. Coliform are members of Enterobacteriacae family. Most common genera are E. coli, Citrobacter, Enterobacter, Klebsiella and Hafnia. This method applies to those food product categories and their subcategories as mentioned in the Appendix B tables of Food Safety and Standards (Food Products Standards and Food Additives) Regulations, 2011 and amendments (Gazette notifications) issued from time to time.
+Method No. FSSAI 15.004:2024
+Principle: Violet red bile lactose agar (VRBL) medium is used for enumeration of coliforms. VRBL contains selective inhibitors - inhibit the accompanying gram-positive and unrelated flora. Coliforms rapidly ferment lactose and produce red colonies surrounded by red purple halo.  Lactose non-fermenters and late lactose fermenters produce pale colonies. Confirmation is carried out in brilliant green bile broth medium, which is also having selective components for the growth of coliforms.
+Ingredients
+g/L
+Heat to boiling to dissolve the medium completely. 
+DO NOT AUTOCLAVE. 
+Cool to 45-50 C.
+Peptone
+7
+
+Yeast extract
+3
+
+Sodium v
+5
+
+Bile salts
+1.5
+
+Glucose
+10
+
+Lactose
+10
+
+Neutral red
+0.03
+
+Crystal violet
+0.002
+
+Agar
+12
+
+pH
+7.4 0.2
+
+Violet Red Bile Agar with Glucose and Lactose is a selective medium recommended for the detection of Enterobacteriaceae species. The addition of glucose to the can improve detection of coliforms. Incubation can be carried out at different temperatures and incubation times depending upon the group of Enterobacteriaceae to be recovered (3). Peptone and yeast extract provide nitrogenous and carbonaceous compounds, long chain amino acids, vitamins and other nutrients essential for bacterial metabolism. This media is selective due to presence of the inhibitors; bile salts mixture and crystal violet. Crystal violet inhibits gram-positive organisms especially staphylococci. Neutral red indicator helps to detect lactose and glucose fermentation. Lactose and glucose fermenting strains grow as red or pink coloured colonies and may be surrounded by a zone of acid precipitated bile. Sodium chloride maintains the osmotic equilibrium in the medium. The red colour is due to absorption of neutral red and a subsequent colour change of the dye when the pH of medium falls below 6.8.
+Requirements:
+* Food sample (milk, juice, ice cream, etc.)
+* Sterile Test tubes
+* Sterile pipettes.
+* Sterile Petri plates.
+* Sterile Violet red bile lactose agar (VRBL) medium molten tubes 15 ml & 5 ml.
+* Sterile Brilliant Green Lactose Bile Broth (BGBB)
+* Incubator
+
+Procedure
+1. Pipette 1ml of the test sample (if the product is liquid), or 1 ml of primary suspension (if prepared) to the centre of each petri dishes. 
+2. Similarly prepare plates from subsequent dilution as required. 2. Pour approximately 15 ml of the molten VRBL agar, (cooled at 44  C to 47  C) into each petri dishes. 
+3. Time elapse between inoculation and addition of agar into plates shall not exceed 15 mins.  
+4. Carefully mix the inoculum with the medium and allow the medium to solidify. Also prepare a control plate with 15 ml of the medium for checking its sterility. 
+5. After complete solidification, pour about 5 ml of molten VRBL agar (cooled at 44  C to 47  C) onto the surface of inoculated medium and allow to solidify.
+6. Invert the inoculated plates and incubate them at 30  C or 37  C for 24   2 h.
+7. After completion of incubation period, count purplish red colonies with a diameter of at least 0.5 mm (sometimes surrounded by a reddish zone of precipitated bile). Consider all these as typical colonies of coliform and do not require further confirmation. Count other atypical colonies (smaller size) also and all colonies derived from milk products that contain sugar other than lactose, immediately after the incubation and confirm.
+8. Select colonies of each atypical type and inoculate into tubes of brilliant green lactose bile broth and incubate at 30  C or 37  C for 24   2 h. Consider all colonies as coliforms that show gas formation in Durham tubes.
+
+Result:
+
+
+Interpretation: Coliforms are Present / Absent.
+
+
+
+
+
+
+PRACTICAL 5
+Antimicrobial Effectiveness Testing.
+Aim: To evaluate the effectiveness of antimicrobial preservatives in a pharmaceutical product by assessing their ability to reduce microbial load over time, as per USP <51> guidelines.
+Introduction:
+Microbial contamination of pharmaceutical and cosmetic products poses a serious threat to product safety and patient health. Many of these products, especially those that are aqueous or used over extended periods (e.g., eye drops, creams, syrups), are prone to microbial growth once opened or during storage. To mitigate this, antimicrobial preservatives are added to inhibit or kill a wide range of microorganisms that may be introduced inadvertently during manufacturing or by the user.
+The United States Pharmacopoeia (USP) outlines a standard test method in Chapter <51> Antimicrobial Effectiveness Testing (AET) to evaluate the capability of a product's preservative system to resist microbial contamination. This test is mandatory for many pharmaceuticals, personal care, and cosmetic formulations to ensure they maintain their microbiological integrity throughout their shelf life.
+In this test, the product is intentionally inoculated with a high level of specific microorganisms representing bacteria (Escherichia coli, Staphylococcus aureus, Pseudomonas aeruginosa), yeast (Candida albicans), and mold (Aspergillus brasiliensis). The survival of these organisms is monitored over 0, 7, 14, and 28 days. A log reduction in microbial count within specific timeframes is required for the preservative system to be deemed effective. AET not only assesses the broad-spectrum activity of the preservatives but also ensures that the product is safe for use under expected storage and handling conditions. It is an essential part of product stability studies and regulatory submissions, and its results directly influence product approval and consumer safety.
+Why It's Important:
+* Ensures microbiological stability of the product during storage and use.
+* Verifies efficacy of preservatives against a range of common contaminants.
+* Aids in regulatory compliance (e.g., US FDA, USP, FSSAI, CDSCO).
+* Helps manufacturers choose or optimise preservative systems.
+This test involves deliberate inoculation of the product with specified microorganisms and monitoring their survival over 28 days. The test assures that the preservative system is capable of controlling microbial contamination, thereby ensuring product safety, stability, and regulatory compliance.
+Principle: Antimicrobial Effectiveness Testing determines whether a product s preservative system can prevent microbial growth. Test microorganisms are introduced into the product, and their survival is monitored over a period (up to 28 days). A significant reduction in microbial count indicates preservative efficacy.
+Examples of Neutralising Agents Used in AET (USP <51>
+Preservative Type
+Common Neutralizers
+
+Preservative Type
+Common Neutralizers
+Parabens (e.g., methyl/propyl paraben)
+Polysorbate 80 (Tween 80), Lecithin
+
+Oxidizing agents (e.g., hydrogen peroxide)
+Catalase, Sodium thiosulfate
+Phenolics (e.g., phenol, chlorocresol)
+Lecithin, Sodium thiosulfate
+
+Alcohols (e.g., ethanol, isopropyl alcohol)
+Often do not require neutralization (due to rapid evaporation)
+Quaternary ammonium compounds (e.g., benzalkonium chloride)
+Lecithin, Polysorbate 80
+
+Mercurials (e.g., thiomersal)
+Sodium thiosulfate
+Aldehydes (e.g., formaldehyde)
+Sodium bisulfite, Sodium thiosulfate
+
+-
+-
+Log Reduction: Log reduction is a mathematical term used to show how much a microbial population has been reduced during disinfection, sterilization, or antimicrobial testing (USP <51>). 
+How Log Reduction Works
+Log Reduction
+Microbial Kill (%)
+Remaining Viable Organisms (from 1,000,000 CFU)
+1 log
+90%
+1,00,000
+2 log
+99%
+10,000
+3 log
+99.90%
+1,000
+4 log
+99.99%
+100
+5 log
+100.00%
+10
+It expresses fold reduction in terms of powers of 10 (logarithms).
+Example:
+* If a sample has: Initial count (Day 0) = 100,000 CFU/ml
+* Count after 7 days = 100 CFU/ml
+* Then log reduction =
+   log10(Initial) - log10(Final)
+   = log10(100,000) - log10(100)
+   = 5 - 2 = 3 log reduction
+ This means a 99.9% reduction in microbial count.
+Why It's Important in USP <51>:
+* Shows how well a preservative works.
+* Specific minimum log reductions are required to pass:
+* Bacteria: ? 3.0 log in 7 days.
+* Fungi (yeast & mold): ? 1.0 log reduction in 14 days, and no increase by Day 28.
+
+Requirements:
+* Product to be tested (aqueous-based pharmaceuticals, cosmetics)
+* Culture suspensions (10? 10? CFU/mL)
+* Sterile saline or diluent
+* Incubator (20 25 C and 30 35 C)
+* Neutralizing agents (if needed)
+* Plate Count Agar, Sabouraud Dextrose Agar
+* Sterile test tubes, pipettes, Petri plates
+Procedure:
+1. Inoculate the product with ~10? 10? CFU/mL of each microorganism separately.
+2. Ensure no more than 1% of the product volume is added to prevent dilution of preservatives.
+3. Store inoculated product at 20 25 C, protected from light.
+4. At time points 0, 7, 14, and 28 days, withdraw samples.
+5. Perform viable count using serial dilution and plating.
+6. Use neutralizing agents if required to counter preservative effects.
+
+
+
+
+Result
+Test Organism
+Initial Count (Day 0)
+Log Reduction at Day 7
+Log Reduction at Day 14
+Log Reduction at Day 28
+Result (Pass/Fail)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interpretation:
+
+
+PRACTICAL 6
+Sterility testing of a pharmaceutical Product.
+Aim: To perform sterility testing of a pharmaceutical product using the Direct Inoculation Method to ensure the product is free from viable contaminating microorganisms.
+Introduction:
+Sterility testing is a critical microbiological quality control procedure used to ensure that pharmaceutical and medical products claimed to be sterile are indeed free from viable contaminating microorganisms. This includes products such as injectable preparations, ophthalmic solutions, surgical dressings, sutures, implants, and certain medical devices. 
+The purpose of this test is not to determine the bioburden but to detect the presence or absence of microorganisms. As these products are intended for parenteral or other sterile administration, even a single viable organism can pose serious health risks including sepsis, endophthalmitis, or other systemic infections. Sterility testing is performed under strict aseptic conditions to prevent false positives resulting from environmental contamination during testing. The test must be conducted in a Class 100 (ISO 5) cleanroom or inside a laminar airflow hood in a controlled microbiological laboratory environment.
+According to major pharmacopoeias (USP <71>, IP, BP, EP), two primary methods are prescribed for sterility testing:
+* Membrane Filtration Method   suitable for filterable liquids and products containing bacteriostatic/fungistatic substances.
+* Direct Inoculation Method   suitable for small-volume or non-filterable products by direct inoculation into sterile media.
+
+Principle:
+Two types of culture media are employed:
+Fluid Thioglycollate Medium (FTM): Supports the growth of aerobic and anaerobic bacteria. Soybean Casein Digest Medium (SCDM): Supports the growth of fungi (yeasts and molds) and aerobic bacteria.
+These media are incubated at two different temperatures:
+* FTM at 30 35 C
+* SCDM at 20 25 C 
+for a period of 14 days, allowing ample time for the growth of even slow-growing organisms.
+
+Sterility test results are accepted only if no turbidity or visible microbial growth is observed in either medium at the end of the incubation period. The procedure must be validated and accompanied by positive and negative controls to confirm reliability. Overall, sterility testing is a regulatory requirement and a batch release criterion for sterile pharmaceutical products as per FSSAI, CDSCO, USP, IP, and WHO-GMP regulations. 
+Requirement
+* Test pharmaceutical product (injectable, eye drop, etc.)
+* Sterile Soybean Casein Digest Medium (SCDM / TSB)
+* Sterile Fluid Thioglycollate Medium (FTM)
+* Laminar airflow cabinet
+* Sterile syringes and needles
+* Incubator (20 25 C and 30 35 C)
+* Personal protective equipment (gloves, mask, gown)
+* Alcohol (70% IPA)
+
+Procedure: Direct Inoculation Method
+1. Aseptic Area Preparation:
+* Perform the test under a laminar airflow hood.
+* Disinfect all working surfaces and allow airflow for 30 minutes before use.
+
+2. Sample Preparation:
+* Wipe the ampoules/vials with 70% alcohol.
+* Open using aseptic techniques.
+
+3. Inoculation:
+* Transfer the specified volume (as per pharmacopeia) of the product directly into:
+* FTM for detection of anaerobic and aerobic bacteria.
+* SCDM for detection of fungi and aerobic bacteria.
+* Inoculate into two separate test tubes or flasks (one for each medium).
+
+4. Incubation:
+Incubate:
+* FTM at 30 35 C
+* SCDM at 20 25 C
+* For 14 days under observation.
+5. Observation:
+* Observe the media daily for any signs of turbidity (indicating microbial growth).
+* Perform gram staining and subculture if growth is observed.
+
+Result: Sterility Test Observation
+Sample Name
+Media Used
+Incubation Temp. ( C)
+Incubation Period (Days)
+Observation (Turbidity/No Growth)
+Result (Pass/Fail)
+Sample A
+Fluid Thioglycollate
+30 35
+14
+
+
+
+Soybean Casein Digest
+20 25
+14
+
+
+Sample B
+Fluid Thioglycollate
+30 35
+14
+
+
+
+Soybean Casein Digest
+20 25
+14
+
+
+Interpretation:
+
+
+
+PRACTICAL 7
+Evaluation of Surface sterilization by Swab testing.
+Aim: To assess the microbial load on different laboratory and industrial surfaces before and after sterilization using the swab testing technique.
+Introduction
+In any environment where microbial contamination must be controlled such as pharmaceutical cleanrooms, hospitals, food processing units, microbiology labs, and sterile manufacturing units it is essential to assess the effectiveness of surface sterilization procedures. Even after cleaning, surfaces may retain viable microorganisms that can compromise product quality and safety or pose a risk of infection.
+One of the standard techniques for evaluating the microbial cleanliness of surfaces is swab testing, also known as the contact swab method. This technique involves using a sterile swab to collect microbial samples from a defined area of a surface before and/or after disinfection. The swab is then cultured in a suitable growth medium (broth or agar) under appropriate incubation conditions. The resulting microbial growth, usually expressed in colony-forming units (CFU), reflects the microbial load on that surface.
+Swab testing can detect a variety of microorganisms such as: Bacteria, Yeasts and molds (especially in moist environments)
+By comparing microbial loads before and after surface sterilization, this method helps validate the efficacy of disinfection protocols, identify potential contamination sources, and ensure compliance with regulatory standards such as those from the FSSAI, WHO, USP, and GMP guidelines.
+Principle:
+The swab method collects potential microbial contaminants from sterilized surfaces. When these swabs are cultured, any surviving microorganisms will grow on the nutrient medium. A clean surface will show no microbial growth, indicating effective sterilization. Presence of colonies indicates incomplete disinfection or contamination.
+
+
+
+Requirements:
+* Sterile swabs.
+* Sterile Normal saline or sterile peptone water tubes.
+* Sterile Petriplate.
+* Sterile Plate count agar & Potato Dextrose agar. 
+* Sterile Test tubes & pipettes.
+* Disinfectant: _________________________
+Procedure:
+1. Select a defined surface area (e.g., 10 cm   10 cm) before and after (surface becomes dry) sterilization.
+2. Moisten a sterile swab in sterile saline.
+3. Swab the surface area in a zig-zag manner horizontally and vertically, rotating the swab.
+4. Transfer the swab into a sterile tube with sterile normal saline or sterile peptone water.
+5. Pour Plate technique: Transfer 1ml of inoculum from normal saline or peptone water to sterile petriplates and add molten plate count agar & potato dextrose agar. 
+6. Allow the agar to solidify.
+7. Incubate the plates at plate count agar 37 C for 24 48 hours & potato dextrose agar at 22.5 C for 72 hours.
+8. Observe and record colony growth (CFU).
+9. Compare results before and after sterilization.
+Result:
+Surface Sample
+Treatment
+Medium Used
+CFU Observed
+Sterility Status (Pass/Fail)
+Bench (Before)
+No Disinfectant
+Plate Count agar
+
+
+Bench (After)
+
+Plate Count agar
+
+
+Bench (Before)
+No Disinfectant
+Potato dextrose agar
+
+
+Bench (After)
+
+Potato dextrose agar
+
+
+Interpretation: 
+
+
+

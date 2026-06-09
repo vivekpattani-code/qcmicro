@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSSAI Virtual Microbiology Lab - Advanced Food Safety Enumeration</title>
+    
+    <!-- Meta tags for SEO and responsive app feel -->
+    <meta name="description" content="An interactive web-based Virtual Microbiology Lab simulation for students to learn advanced food microbiological enumeration methods in compliance with FSSAI & ISO standards.">
+    <meta name="theme-color" content="#0B0F19">
+
+    <!-- Typography: Outfit for Headings, Inter for Body, JetBrains Mono for numbers/calcs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style sheets -->
+    <link rel="stylesheet" href="css/main.css?v=1.4">
+    <link rel="stylesheet" href="css/microscope.css?v=1.4">
+    <link rel="stylesheet" href="css/workbench.css?v=1.4">
+    <link rel="stylesheet" href="css/pathogen.css?v=1.4">
+    <link rel="stylesheet" href="css/qa.css?v=1.4">
+</head>
+<body>
+    <!-- Background animations -->
+    <div class="bio-bg-glow">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <!-- App Wrapper -->
+    <div class="app-container">
+        
+        <!-- Top Navigation -->
+        <header class="app-header">
+            <div class="header-logo">
+                <div class="bio-hazard-icon">
+                    <i class="fa-solid fa-microscope text-cyan-glow"></i>
+                </div>
+                <div>
+                    <h1>Virtual Microbiology Lab</h1>
+                    <span class="sub-logo">Advanced Food Analysis System</span>
+                </div>
+            </div>
+            
+            <div class="header-controls">
+                <!-- Fullscreen, Theme Toggle & Keyboard Help Buttons -->
+                <button id="btn-toggle-fullscreen" class="btn-secondary" title="Toggle Fullscreen" style="padding: 10px 14px;">
+                    <i class="fa-solid fa-expand"></i>
+                </button>
+                <button id="btn-toggle-theme" class="btn-secondary" title="Toggle Light Contrast Mode" style="padding: 10px 14px;">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                </button>
+                <button id="btn-toggle-help" class="btn-secondary" title="Show Keyboard Shortcuts" style="padding: 10px 14px;">
+                    <i class="fa-solid fa-keyboard"></i>
+                </button>
+                <button id="btn-toggle-notebook" class="btn-secondary" title="Toggle Lab Notebook">
+                    <i class="fa-solid fa-book-open"></i> Lab Notebook
+                </button>
+                <div class="user-profile">
+                    <i class="fa-solid fa-user-graduate user-avatar"></i>
+                    <div class="user-details">
+                        <span class="user-role">Student Specialist</span>
+                        <span id="user-score" class="user-points">Score: 0 / 100</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Workspace Area -->
+        <main class="app-main">
+            
+            <!-- 1. DASHBOARD SCREEN -->
+            <section id="screen-dashboard" class="screen active">
+                <div class="dashboard-hero">
+                    <h2>MICROBIAL QUALITY CONTROL IN FOOD AND PHARMACEUTICAL INDUSTRIES</h2>
+                    <p>Select an experimental module below to study the theoretical principles, practice laboratory procedures, and complete the quality assurance checklists. Complete all modules to earn your certification.</p>
+                </div>
+
+                <div class="module-grid">
+                    <!-- Module 1: Food Label Analysis -->
+                    <div class="module-card card-label" onclick="window.selectModule(1)">
+                        <div class="card-badge">FSSAI Label Audits</div>
+                        <div class="card-icon"><i class="fa-solid fa-tags"></i></div>
+                        <h3>Food Label Regulatory Analysis</h3>
+                        <p>Evaluate commercial food product labels (Juice, Formula, Flour) for compliance with FSSAI regulations. Identify missing allergens, invalid license formats, and labeling errors.</p>
+                        <div class="card-meta">
+                            <span><i class="fa-solid fa-clock"></i> 15 mins</span>
+                            <span><i class="fa-solid fa-gauge-high text-green"></i> Easy</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="status-lbl">Not Started</span>
+                            <button class="btn-primary-mini">Enter Lab <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Module 2: DMC Count -->
+                    <div class="module-card card-dmc" onclick="window.selectModule(2)">
+                        <div class="card-badge">FSSAI Platform Screening</div>
+                        <div class="card-icon"><i class="fa-solid fa-eye-dropper"></i></div>
+                        <h3>Direct Microscopic Count (DMC)</h3>
+                        <p>Analyze bacterial loads using the Petroff-Hausser chamber. Learn to calculate the Microscopic Factor (MF) and distinguish cell clumps from individual counts.</p>
+                        <div class="card-meta">
+                            <span><i class="fa-solid fa-clock"></i> 15 mins</span>
+                            <span><i class="fa-solid fa-gauge-high text-green"></i> Easy</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="status-lbl">Not Started</span>
+                            <button class="btn-primary-mini">Enter Lab <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Module 3: Dilutions and Plating -->
+                    <div class="module-card card-dilution" onclick="window.selectModule(3)">
+                        <div class="card-badge">FSSAI 15.001:2024</div>
+                        <div class="card-icon"><i class="fa-solid fa-vial"></i></div>
+                        <h3>Serial Dilution & Plate Counts</h3>
+                        <p>Perform 10-fold serial dilutions, inoculate selective agars (Nutrient Agar, PDA, and PA Plates), regulate incubation parameters, and count CFUs.</p>
+                        <div class="card-meta">
+                            <span><i class="fa-solid fa-clock"></i> 25 mins</span>
+                            <span><i class="fa-solid fa-gauge-high text-yellow"></i> Medium</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="status-lbl">Not Started</span>
+                            <button class="btn-primary-mini">Enter Lab <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Module 4: Pathogen Identification -->
+                    <div class="module-card card-pathogens" onclick="window.selectModule(4)">
+                        <div class="card-badge">Selective Media Suite</div>
+                        <div class="card-icon"><i class="fa-solid fa-dna"></i></div>
+                        <h3>Specialized Pathogen Identification</h3>
+                        <p>Identify foodborne pathogens using selective media, Coagulase tests (S. aureus), Triple Sugar Iron (TSI) slants (Salmonella), and Coliform hierarchy tests.</p>
+                        <div class="card-meta">
+                            <span><i class="fa-solid fa-clock"></i> 20 mins</span>
+                            <span><i class="fa-solid fa-gauge-high text-yellow"></i> Medium</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="status-lbl">Not Started</span>
+                            <button class="btn-primary-mini">Enter Lab <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Module 5: Antimicrobial Effectiveness Testing -->
+                    <div class="module-card card-aet" onclick="window.selectModule(5)">
+                        <div class="card-badge">USP &lt;51&gt; Preservatives</div>
+                        <div class="card-icon"><i class="fa-solid fa-syringe"></i></div>
+                        <h3>Antimicrobial Effectiveness (AET)</h3>
+                        <p>Determine preservative efficacy over a 28-day challenge cycle. Verify neutralizing agents for parabens, alcohols, or QACs and calculate log reductions.</p>
+                        <div class="card-meta">
+                            <span><i class="fa-solid fa-clock"></i> 20 mins</span>
+                            <span><i class="fa-solid fa-gauge-high text-yellow"></i> Medium</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="status-lbl">Not Started</span>
+                            <button class="btn-primary-mini">Enter Lab <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Module 6: Sterility Testing -->
+                    <div class="module-card card-sterility" onclick="window.selectModule(6)">
+                        <div class="card-badge">USP &lt;71&gt; Direct Inoculation</div>
+                        <div class="card-icon"><i class="fa-solid fa-hands-bubbles"></i></div>
+                        <h3>Sterility Testing of Pharmaceutical Product</h3>
+                        <p>Perform direct inoculation of pharmaceutical products into FTM and SCDM media over 14 days to ensure the absence of viable microbial contaminants.</p>
+                        <div class="card-meta">
+                            <span><i class="fa-solid fa-clock"></i> 15 mins</span>
+                            <span><i class="fa-solid fa-gauge-high text-red"></i> Hard</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="status-lbl">Not Started</span>
+                            <button class="btn-primary-mini">Enter Lab <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Module 7: Surface Swab Testing -->
+                    <div class="module-card card-swab" onclick="window.selectModule(7)" style="border: 1px dashed rgba(0, 229, 255, 0.2);">
+                        <div class="card-badge">Surface Audits</div>
+                        <div class="card-icon"><i class="fa-solid fa-circle-check"></i></div>
+                        <h3>Evaluation of Surface Sterilization</h3>
+                        <p>Assess microbial load on laboratory and cleanroom surfaces before and after sterilization using the cotton swab template testing technique.</p>
+                        <div class="card-meta">
+                            <span><i class="fa-solid fa-clock"></i> 15 mins</span>
+                            <span><i class="fa-solid fa-gauge-high text-yellow"></i> Medium</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="status-lbl">Not Started</span>
+                            <button class="btn-primary-mini">Enter Lab <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-summary">
+                    <div class="summary-achievement">
+                        <i class="fa-solid fa-award award-icon locked" id="cert-badge"></i>
+                        <div class="achievement-desc">
+                            <h4>Specialist Certification</h4>
+                            <p id="cert-status-msg">Complete all 7 laboratory modules with a passing grade of 75% or higher to unlock your official FSSAI Food Analyst Specialist Certificate.</p>
+                        </div>
+                        <button id="btn-view-certificate" class="btn-primary disabled" disabled>
+                            <i class="fa-solid fa-file-signature"></i> Get Certificate
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. LAB WORKSPACE WRAPPER (Dynamic Module Loader) -->
+            <section id="screen-workspace" class="screen">
+                <div class="workspace-header">
+                    <button id="btn-back-dashboard" class="btn-secondary">
+                        <i class="fa-solid fa-left-long"></i> Back to Dashboard
+                    </button>
+                    <div class="workspace-title-box">
+                        <span id="active-module-badge" class="badge">FSSAI Standard</span>
+                        <h2 id="active-module-title">Direct Microscopic Count</h2>
+                    </div>
+                    <div class="workspace-tabs">
+                        <button class="tab-btn active" data-tab="theory">
+                            <i class="fa-solid fa-graduation-cap"></i> 1. Study Guide
+                        </button>
+                        <button id="tab-btn-prequiz" class="tab-btn" data-tab="prequiz">
+                            <i class="fa-solid fa-clipboard-question"></i> 2. Pre-Lab Quiz
+                        </button>
+                        <button id="tab-btn-simulation" class="tab-btn locked" data-tab="simulation" title="Complete Pre-Lab Quiz with 100% to unlock">
+                            <i class="fa-solid fa-lock"></i> 3. Simulation
+                        </button>
+                        <button id="tab-btn-interpretation" class="tab-btn" data-tab="interpretation">
+                            <i class="fa-solid fa-chart-pie"></i> 4. Interpretation Guide
+                        </button>
+                        <button id="tab-btn-assessment" class="tab-btn" data-tab="assessment">
+                            <i class="fa-solid fa-list-check"></i> 5. Post-Lab Exam
+                        </button>
+                    </div>
+                </div>
+
+                <div class="workspace-body">
+                    
+                    <!-- TAB CONTENT: THEORY -->
+                    <div class="tab-content active" id="tab-theory">
+                        <div class="theory-viewer glass-panel">
+                            <div class="theory-markdown" id="theory-content">
+                                <!-- Loaded dynamically from theory.js -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB CONTENT: PRE-LAB QUIZ -->
+                    <div class="tab-content" id="tab-prequiz">
+                        <div class="theory-viewer glass-panel" style="max-width: 800px; margin: 24px auto; padding: 32px;">
+                            <h3 style="font-family: var(--font-heading); color: var(--color-cyan); margin-bottom: 8px;">
+                                <i class="fa-solid fa-clipboard-question"></i> Pre-Simulation Safety & Protocol Quiz
+                            </h3>
+                            <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 24px;">
+                                You must secure a perfect score of <strong>100% (10/10)</strong> on this quiz to unlock the practical laboratory simulation. Review the Study Guide if you need to refresh your understanding of the regulatory standards.
+                            </p>
+                            <form id="prequiz-form" class="quiz-form"></form>
+                            <div id="prequiz-feedback" class="quiz-feedback hidden"></div>
+                            <div style="margin-top: 24px; display: flex; gap: 16px; align-items: center;">
+                                <button id="btn-submit-prequiz" class="btn-primary">Submit Quiz</button>
+                                <span id="prequiz-unlock-status" class="badge badge-error">Locked - 0/10 Correct</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB CONTENT: SIMULATION -->
+                    <div class="tab-content" id="tab-simulation">
+                        <div class="simulation-container">
+                            
+                            <!-- Left Sidebar: Instruction Panel -->
+                            <div class="sim-guide-panel glass-panel">
+                                <h3>Method Procedure</h3>
+                                <div class="step-progress-indicator">
+                                    <span class="progress-step-text">Step 1 of 5</span>
+                                    <div class="progress-bar-container">
+                                        <div id="sim-progress-bar" class="progress-bar" style="width: 20%;"></div>
+                                    </div>
+                                </div>
+                                <div id="sim-steps-list" class="sim-steps-list">
+                                    <!-- Populated dynamically via module scripts -->
+                                </div>
+                                <div class="sim-guide-controls">
+                                    <button id="btn-prev-step" class="btn-secondary-mini" disabled>
+                                        <i class="fa-solid fa-chevron-left"></i> Prev
+                                    </button>
+                                    <button id="btn-next-step" class="btn-primary-mini" disabled>
+                                        Next <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Center Stage: The Interactive Workbench -->
+                            <div class="sim-workbench-stage glass-panel" id="workbench-stage">
+                                <!-- Module viewports are swapped inside here dynamically -->
+                                
+                                <!-- MODULE 1 VIEWPORT: MICROSCOPE -->
+                                <div id="viewport-microscope" class="module-viewport hidden">
+                                    <div class="microscope-layout">
+                                        <div class="microscope-lens-frame">
+                                            <div class="lens-glass">
+                                                <canvas id="microscope-canvas" width="400" height="400"></canvas>
+                                                <div class="lens-crosshair"></div>
+                                                <div class="lens-vignette"></div>
+                                                <div id="lens-blur-overlay" class="lens-blur"></div>
+                                            </div>
+                                            <div class="scale-bar">Field Width: 0.16 mm</div>
+                                        </div>
+                                        
+                                        <div class="microscope-controls">
+                                            <div class="control-group">
+                                                <h4>Sample Parameters</h4>
+                                                <label for="sample-source-m1">Sample Source:</label>
+                                                <select id="sample-source-m1" class="custom-select">
+                                                    <option value="raw">Raw Milk (High Density)</option>
+                                                    <option value="pasteurized">Pasteurized Milk (Low Density)</option>
+                                                    <option value="saline">Contaminated Saline (Medium Density)</option>
+                                                </select>
+                                                <label for="dilution-factor-m1" style="margin-top: 8px;">Preparation Dilution:</label>
+                                                <select id="dilution-factor-m1" class="custom-select">
+                                                    <option value="1">Undiluted (1:1)</option>
+                                                    <option value="10">1:10 Diluted</option>
+                                                    <option value="100">1:100 Diluted</option>
+                                                </select>
+                                            </div>
+                                            <div class="control-group">
+                                                <h4>Microscope Coaxial Adjustment</h4>
+                                                <div class="knob-container">
+                                                    <div class="coaxial-knob" id="coarse-focus-knob">
+                                                        <label>Focus Adjustment</label>
+                                                        <input type="range" id="slider-focus" min="0" max="100" value="10" class="vertical-range">
+                                                        <span class="range-value" id="focus-readout">Unfocused</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <h4>Petroff-Hausser Grid Stage</h4>
+                                                <div class="grid-nav-keys">
+                                                    <button class="nav-key" id="stage-up" title="Move Up"><i class="fa-solid fa-caret-up"></i></button>
+                                                    <div class="nav-row">
+                                                        <button class="nav-key" id="stage-left" title="Move Left"><i class="fa-solid fa-caret-left"></i></button>
+                                                        <span class="nav-center"><i class="fa-solid fa-arrows-to-dot"></i></span>
+                                                        <button class="nav-key" id="stage-right" title="Move Right"><i class="fa-solid fa-caret-right"></i></button>
+                                                    </div>
+                                                    <button class="nav-key" id="stage-down" title="Move Down"><i class="fa-solid fa-caret-down"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="control-group tally-counter-group">
+                                                <h4>Tally Counter</h4>
+                                                <div class="tally-display" id="tally-number">000</div>
+                                                <div class="tally-buttons">
+                                                    <button class="btn-success-mini" id="btn-tally-count"><i class="fa-solid fa-plus"></i> Register Count</button>
+                                                    <button class="btn-secondary-mini" id="btn-tally-reset"><i class="fa-solid fa-rotate-left"></i> Clear</button>
+                                                </div>
+                                                <div class="tally-options">
+                                                    <label class="toggle-container">
+                                                        <input type="checkbox" id="chk-clump-mode">
+                                                        <span class="toggle-slider"></span>
+                                                        Count Clumps Only (for SPC Correlation)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MODULE 2 VIEWPORT: DILUTION WORKBENCH -->
+                                <div id="viewport-dilution" class="module-viewport hidden">
+                                                                    <div class="workbench-layout" style="position: relative;">
+                                        <!-- Floating Pipette for Module 2 -->
+                                        <div id="floating-pipette-m2" class="floating-pipette-graphic">
+                                            <div class="pipette-plunger" id="float-pipette-plunger"></div>
+                                            <div class="pipette-barrel"></div>
+                                            <div class="pipette-tip" id="float-pipette-tip">
+                                                <div class="pipette-liquid" id="float-pipette-liquid"></div>
+                                            </div>
+                                        </div>
+                                        <div class="workbench-shelf">
+                                            <!-- Tubes and pipettes will go here -->
+                                            <div class="tubes-rack">
+                                                <div class="tube-slot" data-index="0" id="dilution-tube-0">
+                                                    <div class="tube-label">Stock</div>
+                                                    <div class="glass-tube sample-stock">
+                                                        <div class="liquid stock-liquid"></div>
+                                                    </div>
+                                                    <div class="tube-volume">10 mL</div>
+                                                </div>
+                                                <div class="tube-slot" data-index="1" id="dilution-tube-1">
+                                                    <div class="tube-label">10<sup>-1</sup></div>
+                                                    <div class="glass-tube">
+                                                        <div class="liquid diluent-liquid" id="liquid-t1"></div>
+                                                    </div>
+                                                    <div class="tube-volume" id="vol-t1">9 mL</div>
+                                                </div>
+                                                <div class="tube-slot" data-index="2" id="dilution-tube-2">
+                                                    <div class="tube-label">10<sup>-2</sup></div>
+                                                    <div class="glass-tube">
+                                                        <div class="liquid diluent-liquid" id="liquid-t2"></div>
+                                                    </div>
+                                                    <div class="tube-volume" id="vol-t2">9 mL</div>
+                                                </div>
+                                                <div class="tube-slot" data-index="3" id="dilution-tube-3">
+                                                    <div class="tube-label">10<sup>-3</sup></div>
+                                                    <div class="glass-tube">
+                                                        <div class="liquid diluent-liquid" id="liquid-t3"></div>
+                                                    </div>
+                                                    <div class="tube-volume" id="vol-t3">9 mL</div>
+                                                </div>
+                                                <div class="tube-slot" data-index="4" id="dilution-tube-4">
+                                                    <div class="tube-label">10<sup>-4</sup></div>
+                                                    <div class="glass-tube">
+                                                        <div class="liquid diluent-liquid" id="liquid-t4"></div>
+                                                    </div>
+                                                    <div class="tube-volume" id="vol-t4">9 mL</div>
+                                                </div>
+                                                <div class="tube-slot" data-index="5" id="dilution-tube-5">
+                                                    <div class="tube-label">10<sup>-5</sup></div>
+                                                    <div class="glass-tube">
+                                                        <div class="liquid diluent-liquid" id="liquid-t5"></div>
+                                                    </div>
+                                                    <div class="tube-volume" id="vol-t5">9 mL</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="workbench-bottom">
+                                            <div class="workbench-tools">
+                                                <h4>Micro-pipette Controls</h4>
+                                                <div class="pipette-controls">
+                                                    <select id="pipette-vol-select" class="custom-select">
+                                                        <option value="1.0">1.0 mL Pipette Tip</option>
+                                                        <option value="0.1">0.1 mL Pipette Tip</option>
+                                                    </select>
+                                                    <div class="pipette-graphic-holder">
+                                                        <div class="pipette-plunger" id="pipette-plunger"></div>
+                                                        <div class="pipette-barrel"></div>
+                                                        <div class="pipette-tip" id="pipette-tip">
+                                                            <div class="pipette-liquid" id="pipette-liquid"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pipette-button-grid">
+                                                        <button class="btn-primary-mini" id="btn-pipette-aspirate">Aspirate</button>
+                                                        <button class="btn-primary-mini" id="btn-pipette-dispense">Dispense</button>
+                                                    </div>
+                                                    <div style="margin-top: 8px; width: 100%;">
+                                                        <button class="btn-secondary-mini" id="btn-pipette-eject" style="width: 100%; padding: 6px 12px; display: flex; align-items: center; justify-content: center; gap: 6px;"><i class="fa-solid fa-trash-can"></i> Change Tip</button>
+                                                    </div>
+                                                    <div class="pipette-status" id="pipette-status">Pipette: Empty</div>
+                                                    <div class="pipette-tip-status" id="pipette-tip-status" style="font-size: 11px; color: var(--color-green); text-align: center; margin-top: 4px; font-family: var(--font-code);">Tip: Sterile</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="plating-panel">
+                                                <h4>Plating Area & Medium Select</h4>
+                                                <div class="plating-controls">
+                                                    <div class="control-row" style="margin-bottom: 8px;">
+                                                        <label for="sample-source-m2">Sample Source:</label>
+                                                        <select id="sample-source-m2" class="custom-select">
+                                                            <option value="milk">Raw Dairy Milk (High Count)</option>
+                                                            <option value="water">Bottled Water (Low Count)</option>
+                                                            <option value="greens">Salad Greens Wash (Medium Count)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="medium-select-box">
+                                                        <label for="media-select">Select Growth Medium:</label>
+                                                        <select id="media-select" class="custom-select">
+                                                            <option value="" disabled selected>-- Select Medium --</option>
+                                                            <option value="PCA">Plate Count Agar (PCA) - General SPC</option>
+                                                            <option value="PDA">Potato Dextrose Agar (PDA) - Yeast/Mould</option>
+                                                            <option value="PA">PA Count Plate - P. aeruginosa</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="pda-acidification hidden" id="pda-acid-box">
+                                                        <label class="checkbox-container">
+                                                            <input type="checkbox" id="chk-tartaric-acid">
+                                                            <span class="checkmark"></span>
+                                                            Add 10% Tartaric Acid (adjust pH to suppress bacteria)
+                                                        </label>
+                                                    </div>
+                                                    
+                                                    <div class="petri-dishes-holder">
+                                                        <div class="dish-slot" id="dish-slot-a">
+                                                            <span>Dish A</span>
+                                                            <div class="petri-dish" id="petri-dish-a">
+                                                                <div class="agar-layer" id="agar-layer-a"></div>
+                                                                <div class="petri-fluid" id="petri-fluid-a"></div>
+                                                                <canvas id="canvas-dish-a" class="plate-canvas" width="120" height="120"></canvas>
+                                                            </div>
+                                                            <span class="dish-label" id="dish-lbl-a">Empty</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="incubator-colony-panel">
+                                                <h4>Incubation & Counter</h4>
+                                                <div class="incubator-section">
+                                                    <div class="control-row">
+                                                        <label>Incubator Temp:</label>
+                                                        <input type="number" id="incubator-temp" min="15" max="45" value="37" class="num-input"> °C
+                                                    </div>
+                                                    <div class="control-row">
+                                                        <label>Duration:</label>
+                                                        <input type="number" id="incubator-hours" min="1" max="120" value="48" class="num-input"> hours
+                                                    </div>
+                                                    <button class="btn-success-mini" id="btn-run-incubation"><i class="fa-solid fa-temperature-arrow-up"></i> Run Incubation</button>
+                                                </div>
+                                                <div class="colony-counter-section">
+                                                    <div class="counter-display" id="colony-counter-val">0</div>
+                                                    <button class="btn-primary-mini disabled" id="btn-colony-tally" disabled><i class="fa-solid fa-fingerprint"></i> Tally Colony</button>
+                                                    <button class="btn-secondary-mini" id="btn-colony-clear">Clear</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MODULE 3 VIEWPORT: SELECTIVE PATHOGENS -->
+                                <div id="viewport-pathogens" class="module-viewport hidden">
+                                    <div class="pathogen-layout">
+                                        <div class="pathogen-selector-bar">
+                                            <button class="pathogen-sub-tab active" data-sub="staph">Staphylococcus aureus (Coagulase)</button>
+                                            <button class="pathogen-sub-tab" data-sub="salm">Salmonella spp. (TSI Reactions)</button>
+                                            <button class="pathogen-sub-tab" data-sub="coliform">Coliform Testing Hierarchy</button>
+                                        </div>
+
+                                        <div class="pathogen-sub-viewport" id="sub-pathogen-staph">
+                                            <div class="staph-workbench">
+                                                <div class="staph-glassware">
+                                                    <div class="coagulase-tube-holder">
+                                                        <div class="coagulase-tube" id="coagulase-tube-element">
+                                                            <div class="cap"></div>
+                                                            <div class="broth-plasma" id="coagulase-fluid"></div>
+                                                        </div>
+                                                        <span class="label">S. aureus + Coagulase Plasma</span>
+                                                    </div>
+                                                </div>
+                                                <div class="staph-controls glass-panel">
+                                                    <h4>Coagulase Confirmatory Test</h4>
+                                                    <div class="form-group" style="margin-bottom: 12px;">
+                                                        <label for="staph-organism-select" style="display: block; margin-bottom: 6px; font-size: 13px; color: var(--text-body);">Select Organism to Test:</label>
+                                                        <select id="staph-organism-select" class="custom-select">
+                                                            <option value="aureus">Staphylococcus aureus (Coagulase-Positive)</option>
+                                                            <option value="epidermidis">Staphylococcus epidermidis (Coagulase-Negative)</option>
+                                                        </select>
+                                                    </div>
+                                                    <p>Mix the isolated colony into 0.5 mL of rabbit coagulase plasma and incubate at 37°C. Monitor hourly for plasma clotting.</p>
+                                                    
+                                                    <div class="test-controls">
+                                                        <div class="control-row">
+                                                            <span>Incubation Timer:</span>
+                                                            <strong id="staph-inc-time">0 hours</strong>
+                                                        </div>
+                                                        <button class="btn-primary-mini" id="btn-incubate-staph">Incubate 1 Hour</button>
+                                                        
+                                                        <div class="tilt-section">
+                                                            <span>Check for Clot Formation:</span>
+                                                            <button class="btn-success-mini" id="btn-tilt-tube">Tilt Tube <i class="fa-solid fa-rotate-right"></i></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="test-outcome" id="staph-outcome">Result: Unincubated</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pathogen-sub-viewport hidden" id="sub-pathogen-salm">
+                                            <div class="salm-workbench">
+                                                <div class="tsi-glassware">
+                                                    <div class="tsi-slant-container">
+                                                        <div class="tsi-tube" id="tsi-slant-element">
+                                                            <div class="slant-cap"></div>
+                                                            <div class="tsi-slant-agar" id="tsi-agar-slant"></div>
+                                                            <div class="tsi-butt-agar" id="tsi-agar-butt"></div>
+                                                            <div class="tsi-gas-crack" id="tsi-gas-bubbles"></div>
+                                                            <div class="tsi-h2s-black" id="tsi-h2s-blackening"></div>
+                                                        </div>
+                                                        <span class="label">Triple Sugar Iron (TSI) Slant</span>
+                                                    </div>
+                                                </div>
+                                                <div class="salm-controls glass-panel">
+                                                    <h4>TSI Reaction Profiling</h4>
+                                                    <div class="form-group" style="margin-bottom: 12px;">
+                                                        <label for="salm-organism-select" style="display: block; margin-bottom: 6px; font-size: 13px; color: var(--text-body);">Select Organism to Inoculate:</label>
+                                                        <select id="salm-organism-select" class="custom-select">
+                                                            <option value="salmonella">Salmonella enterica (K/A, Gas+, H₂S+)</option>
+                                                            <option value="ecoli">Escherichia coli (A/A, Gas+, H₂S-)</option>
+                                                            <option value="pseudomonas">Pseudomonas aeruginosa (K/K, Gas-, H₂S-)</option>
+                                                            <option value="shigella">Shigella flexneri (K/A, Gas-, H₂S-)</option>
+                                                        </select>
+                                                    </div>
+                                                    <p>Triple Sugar Iron (TSI) agar tests for carbohydrate fermentation, gas production, and hydrogen sulfide (H<sub>2</sub>S) synthesis.</p>
+                                                    <div class="test-controls">
+                                                        <div class="form-group">
+                                                            <label>Inoculation Loop Action:</label>
+                                                            <button class="btn-primary-mini" id="btn-inoculate-tsi">Stab Butt and Streak Slant</button>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <button class="btn-success-mini" id="btn-incubate-tsi" disabled>Incubate Slant (37°C for 24h)</button>
+                                                        </div>
+                                                        
+                                                        <div class="reaction-observations">
+                                                            <h5>Observe Reaction:</h5>
+                                                            <ul>
+                                                                <li>Slant Color: <strong id="readout-slant">Uninoculated</strong></li>
+                                                                <li>Butt Color: <strong id="readout-butt">Uninoculated</strong></li>
+                                                                <li>Gas Production: <strong id="readout-gas">None</strong></li>
+                                                                <li>H<sub>2</sub>S Blackening: <strong id="readout-h2s">None</strong></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pathogen-sub-viewport hidden" id="sub-pathogen-coliform">
+                                            <div class="coliform-workbench">
+                                                <div class="coliform-flowchart">
+                                                    <div class="flow-step" id="col-flow-1">
+                                                        <span class="step-num">1</span>
+                                                        <h5>Presumptive</h5>
+                                                        <div class="flow-media">VRBA Agar</div>
+                                                        <p>Red colonies with bile halo (32°C, 24h)</p>
+                                                    </div>
+                                                    <div class="flow-arrow"><i class="fa-solid fa-right-long"></i></div>
+                                                    <div class="flow-step inactive" id="col-flow-2">
+                                                        <span class="step-num">2</span>
+                                                        <h5>Confirmed</h5>
+                                                        <div class="flow-media">2% BGLB Broth</div>
+                                                        <p>Gas production in Durham tube (48h)</p>
+                                                    </div>
+                                                    <div class="flow-arrow"><i class="fa-solid fa-right-long"></i></div>
+                                                    <div class="flow-step inactive" id="col-flow-3">
+                                                        <span class="step-num">3</span>
+                                                        <h5>Completed</h5>
+                                                        <div class="flow-media">EMB Agar</div>
+                                                        <p>Gram-negative rods, green metallic sheen</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="coliform-sim-actions glass-panel">
+                                                    <h4>Coliform Testing Hierarchy</h4>
+                                                    <div class="form-group" style="margin-bottom: 12px; width: 100%;">
+                                                        <label for="coliform-sample-select" style="display: block; margin-bottom: 6px; font-size: 13px; color: var(--text-body);">Select Colony Source to Trace:</label>
+                                                        <select id="coliform-sample-select" class="custom-select">
+                                                            <option value="ecoli">Escherichia coli (Classic Coliform)</option>
+                                                            <option value="enterobacter">Enterobacter aerogenes (Atypical Coliform)</option>
+                                                            <option value="salmonella">Salmonella enterica (Lactose-Negative Non-Coliform)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="coliform-action-card">
+                                                        <div id="coliform-visual-box" class="coliform-visual-box">
+                                                            <!-- Render VRBA plate, BGLB tube with Durham vial, or EMB plate -->
+                                                            <canvas id="coliform-canvas" width="160" height="160"></canvas>
+                                                            <div id="bglb-durham-container" class="durham-container hidden">
+                                                                <div class="durham-vial" id="bglb-vial">
+                                                                    <div class="gas-bubble" id="bglb-bubble"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="coliform-details">
+                                                            <h5 id="coliform-stage-title">Presumptive Test (VRBA)</h5>
+                                                            <p id="coliform-stage-desc">Examine VRBA plates for characteristic coliform colonies (dark red, 0.5 mm or larger, surrounded by a zone of precipitated bile acids).</p>
+                                                            <div id="coliform-button-set">
+                                                                <button class="btn-primary-mini" id="btn-coliform-action">Count Red Colonies</button>
+                                                                <button class="btn-secondary-mini" id="btn-coliform-next" disabled>Proceed to Confirmed Test</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MODULE 4 VIEWPORT: QUALITY ASSURANCE -->
+                                <div id="viewport-qa" class="module-viewport hidden">
+                                    <div class="qa-layout">
+                                        <div class="qa-selector-bar">
+                                            <button class="qa-sub-tab active" data-sub="autoclave">Autoclave Operation Audit</button>
+                                            <button class="qa-sub-tab" data-sub="bsc">Biosafety Cabinet (BSC) Audit</button>
+                                        </div>
+
+                                        <!-- Autoclave Subsystem -->
+                                        <div class="qa-sub-viewport" id="sub-qa-autoclave">
+                                            <div class="autoclave-workbench">
+                                                <div class="autoclave-visualizer">
+                                                    <div class="autoclave-chamber" id="autoclave-chamber-body">
+                                                        <div class="steam-vapors" id="steam-vapors-particles"></div>
+                                                        <div class="loaded-rack">
+                                                            <div class="load-beaker">Medium</div>
+                                                            <div class="process-indicator-strip" id="autoclave-strip">Indicator</div>
+                                                        </div>
+                                                        <div class="autoclave-door-seal" id="autoclave-door"></div>
+                                                    </div>
+                                                    <div class="gauge-rack">
+                                                        <div class="dial-gauge">
+                                                            <span class="dial-lbl">TEMP (°C)</span>
+                                                            <div class="dial-hand" id="temp-hand" style="transform: rotate(0deg);"></div>
+                                                            <span class="dial-val" id="temp-readout">25</span>
+                                                        </div>
+                                                        <div class="dial-gauge">
+                                                            <span class="dial-lbl">PRESSURE (psi)</span>
+                                                            <div class="dial-hand" id="press-hand" style="transform: rotate(0deg);"></div>
+                                                            <span class="dial-val" id="press-readout">0</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="autoclave-controls glass-panel">
+                                                    <h4>Autoclave Operation Audit (121°C @ 15 psi)</h4>
+                                                    <p>Audit step: Ensure all air is removed by venting steam before closing the valve. Failing to purge air forms "cold spots," leading to sterilization failure.</p>
+                                                    
+                                                    <div class="autoclave-switches">
+                                                        <div class="control-row">
+                                                            <label class="toggle-container">
+                                                                <input type="checkbox" id="chk-autoclave-door">
+                                                                <span class="toggle-slider"></span>
+                                                                Chamber Door Locked
+                                                            </label>
+                                                        </div>
+                                                        <div class="control-row">
+                                                            <label class="toggle-container">
+                                                                <input type="checkbox" id="chk-steam-heat">
+                                                                <span class="toggle-slider"></span>
+                                                                Steam Heat Element
+                                                            </label>
+                                                        </div>
+                                                        <div class="control-row">
+                                                            <label class="toggle-container">
+                                                                <input type="checkbox" id="chk-vent-valve" checked>
+                                                                <span class="toggle-slider"></span>
+                                                                Venting Exhaust Valve Open (Purge Air)
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="autoclave-indicators">
+                                                        <span>Purge State:</span>
+                                                        <span id="vent-exhaust-status" class="badge badge-error">Idle</span>
+                                                        
+                                                        <span>Cycle State:</span>
+                                                        <span id="cycle-timer-status" class="badge">0:00 mins</span>
+                                                    </div>
+
+                                                    <div class="autoclave-action-buttons">
+                                                        <button class="btn-primary-mini" id="btn-autoclave-run">Start Sterilization</button>
+                                                        <button class="btn-secondary-mini" id="btn-autoclave-reset">Reset Chamber</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Biosafety Cabinet (BSC) Subsystem -->
+                                        <div class="qa-sub-viewport hidden" id="sub-qa-bsc">
+                                            <div class="bsc-workbench">
+                                                <div class="bsc-cabinet-drawing">
+                                                    <div class="bsc-hepa-filter">
+                                                        <div class="hepa-grid">HEPA FILTER SYSTEM (99.97% Efficiency)</div>
+                                                        <div class="hepa-flow" id="hepa-airflow"></div>
+                                                    </div>
+                                                    <div class="bsc-working-space">
+                                                        <div class="petri-plate exposure-plate" id="bsc-exposure-plate">
+                                                            <canvas id="bsc-canvas" width="100" height="100"></canvas>
+                                                        </div>
+                                                        <div class="airflow-readout">Sash Height: 8 Inches</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="bsc-controls glass-panel">
+                                                    <h4>BSC Contamination & Airflow Audit</h4>
+                                                    <p>Audit method: Expose PCA plates inside the cabinet for 30 minutes, incubate at 37°C for 24-48 hours. If colonies appear, repeat. Three consecutive failures requires HEPA service.</p>
+                                                    
+                                                    <div class="bsc-indicators">
+                                                        <div class="bsc-row">
+                                                            <span>HEPA Pressure Differential:</span>
+                                                            <strong id="bsc-dp-readout">0.45 inches W.G. (Normal)</strong>
+                                                        </div>
+                                                        <div class="bsc-row">
+                                                            <span>Trial Record:</span>
+                                                            <span id="bsc-trial-indicator">Trial 1 of 3</span>
+                                                        </div>
+                                                        <div class="bsc-row">
+                                                            <span>Consecutive Failures:</span>
+                                                            <strong id="bsc-failures-count" class="text-green">0</strong>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="bsc-action-box">
+                                                        <button class="btn-primary-mini" id="btn-bsc-expose">Expose Plates (30 mins)</button>
+                                                        <button class="btn-success-mini" id="btn-bsc-incubate" disabled>Incubate & Read Plates</button>
+                                                    </div>
+                                                    <div class="bsc-outcome-log" id="bsc-outcome-log">Cabinet State: Ready to test</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MODULE 5 VIEWPORT: FOOD LABEL REGULATORY ANALYSIS -->
+                                <div id="viewport-label" class="module-viewport hidden">
+                                    <div class="label-layout">
+                                        <div class="label-sidebar-left">
+                                            <h4>Select Product Label</h4>
+                                            <div class="product-tabs">
+                                                <button class="product-tab-btn active" onclick="notebook.m1_selectProduct('juice')">Packaged Juice</button>
+                                                <button class="product-tab-btn" onclick="notebook.m1_selectProduct('formula')">Infant Formula</button>
+                                                <button class="product-tab-btn" onclick="notebook.m1_selectProduct('flour')">Wheat Flour Bag</button>
+                                            </div>
+                                            
+                                            <div class="label-compliance-checklist glass-panel" style="margin-top: 16px; padding: 12px;">
+                                                <h4 style="margin-bottom: 8px;">Compliance Check</h4>
+                                                <div class="checklist-items">
+                                                    <label class="checkbox-container">Missing FSSAI License/Logo
+                                                        <input type="checkbox" id="chk-fail-fssai" onchange="notebook.m1_updateReport()" />
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    <label class="checkbox-container">Missing Veg/Non-Veg Logo
+                                                        <input type="checkbox" id="chk-fail-veg" onchange="notebook.m1_updateReport()" />
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    <label class="checkbox-container">Missing Allergen Warning
+                                                        <input type="checkbox" id="chk-fail-allergen" onchange="notebook.m1_updateReport()" />
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    <label class="checkbox-container">Non-Standard Units / Info
+                                                        <input type="checkbox" id="chk-fail-units" onchange="notebook.m1_updateReport()" />
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                                
+                                                <label for="label-audit-status" style="margin-top: 12px; display: block; font-size: 12px; color: var(--text-title);">Audit Decision:</label>
+                                                <select id="label-audit-status" class="custom-select" onchange="notebook.m1_updateReport()">
+                                                    <option value="">-- Choose Decision --</option>
+                                                    <option value="compliant">Compliant (Passed)</option>
+                                                    <option value="noncompliant">Non-Compliant (Failed)</option>
+                                                </select>
+                                                
+                                                <button class="btn-primary" id="btn-submit-label-audit" style="width:100%; margin-top:12px; padding: 8px 12px;" onclick="notebook.m1_submitAudit()">
+                                                    <i class="fa-solid fa-file-invoice"></i> Log Audit Report
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="label-display-area glass-panel">
+                                            <div class="label-preview-container" id="label-preview-box">
+                                                <!-- Dynamic Label Visuals -->
+                                                <div class="commercial-label" id="rendered-label">
+                                                    <!-- Injected via label.js -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="label-sidebar-right glass-panel">
+                                            <h4>Hotspot Inspector</h4>
+                                            <div id="label-inspector-details" style="font-size: 13px; color: var(--text-body); line-height: 1.5;">
+                                                Click on the highlighted hotspots on the label to inspect regulatory details.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MODULE 6 VIEWPORT: ANTIMICROBIAL EFFECTIVENESS TESTING (AET) -->
+                                <div id="viewport-aet" class="module-viewport hidden">
+                                    <div class="aet-layout">
+                                        <div class="aet-controls-panel">
+                                            <h4>USP &lt;51&gt; Challenge Assay</h4>
+                                            
+                                            <label for="aet-preservative">Preservative System:</label>
+                                            <select id="aet-preservative" class="custom-select" onchange="notebook.m5_resetAET()">
+                                                <option value="bac">Benzalkonium Chloride (QAC)</option>
+                                                <option value="paraben">Methylparaben (Parabens)</option>
+                                            </select>
+                                            
+                                            <label for="aet-organism" style="margin-top: 8px;">Challenge Organism:</label>
+                                            <select id="aet-organism" class="custom-select" onchange="notebook.m5_resetAET()">
+                                                <option value="saureus">Staphylococcus aureus (Bacteria)</option>
+                                                <option value="calbicans">Candida albicans (Yeast)</option>
+                                            </select>
+                                            
+                                            <label for="aet-neutralizer" style="margin-top: 8px;">Preservative Neutralizer:</label>
+                                            <select id="aet-neutralizer" class="custom-select" onchange="notebook.m5_updateNeutralizer()">
+                                                <option value="">-- Select Neutralizing Agent --</option>
+                                                <option value="lec_poly">Lecithin + Polysorbate 80</option>
+                                                <option value="thiosulfate">Sodium Thiosulfate</option>
+                                                <option value="pbs">Phosphate Buffered Saline (None)</option>
+                                            </select>
+
+                                            <div class="challenge-days" style="margin-top: 12px;">
+                                                <label style="font-size: 12.5px; color: var(--text-title);">Assay Time Point:</label>
+                                                <div class="day-buttons-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 4px;">
+                                                    <button class="day-btn active" id="btn-day-0" onclick="notebook.m5_selectDay(0)">Day 0</button>
+                                                    <button class="day-btn" id="btn-day-7" onclick="notebook.m5_selectDay(7)">Day 7</button>
+                                                    <button class="day-btn" id="btn-day-14" onclick="notebook.m5_selectDay(14)">Day 14</button>
+                                                    <button class="day-btn" id="btn-day-28" onclick="notebook.m5_selectDay(28)">Day 28</button>
+                                                </div>
+                                            </div>
+
+                                            <button class="btn-primary" id="btn-aet-run" style="width: 100%; margin-top: 16px;" onclick="notebook.m5_runAssay()">
+                                                <i class="fa-solid fa-play"></i> Inoculate, Dilute &amp; Plate
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="aet-workbench-stage glass-panel" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+                                            <div class="aet-plates-container" style="display: flex; justify-content: center; align-items: center; height: 100%;">
+                                                <div class="petri-dish-holder" style="display: flex; flex-direction: column; align-items: center;">
+                                                    <div class="petri-dish" id="aet-plate" style="width: 160px; height: 160px; border-radius: 50%; border: 3px solid rgba(255,255,255,0.2); background: rgba(212,175,55,0.08); position: relative; overflow: hidden; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);">
+                                                        <div class="agar-layer" id="aet-agar" style="position: absolute; width: 100%; height: 100%; background: rgba(245,222,179,0.25);"></div>
+                                                        <div class="colony-container" id="aet-colonies" style="position: absolute; width: 100%; height: 100%;"></div>
+                                                    </div>
+                                                    <div class="plate-label" id="aet-plate-label" style="margin-top: 8px; font-size: 12px; color: var(--text-title);">PCA Plate (Undiluted)</div>
+                                                </div>
+                                            </div>
+                                            <div class="aet-status-hud" style="position: absolute; bottom: 12px; left: 16px; font-size: 12px;">
+                                                <span class="hud-lbl" style="color: var(--text-muted);">Vial Status:</span>
+                                                <span class="hud-val" id="aet-status-txt" style="color: var(--color-cyan); font-weight: bold;">Ready for Inoculation</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="aet-instructions-panel glass-panel">
+                                            <h4>AET Step Guide</h4>
+                                            <ol style="padding-left: 16px; font-size: 12.5px; line-height: 1.5;">
+                                                <li>Inoculate the Preservative Solution with challenge organisms.</li>
+                                                <li>Select the appropriate Neutralizing Agent to stop the preservative action.</li>
+                                                <li>Select the challenge day (Day 0, 7, 14, 28) and run the plating transfer.</li>
+                                                <li>Verify colony counts on plates and log calculations in the notebook.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MODULE 6 & 7 VIEWPORT: STERILITY & SWAB AUDITING -->
+                                <div id="viewport-sterility" class="module-viewport hidden">
+                                    <div class="sterility-layout">
+                                        <div class="sterility-sidebar-left">
+                                            <div id="sterility-mode-selector">
+                                                <h4>Select Assay Mode</h4>
+                                                <div class="product-tabs" style="margin-bottom: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+                                                    <button class="product-tab-btn active" id="btn-tab-sterility-direct" onclick="notebook.m6_switchMode('direct')" style="padding: 6px 4px; font-size: 11px;">Sterility Test</button>
+                                                    <button class="product-tab-btn" id="btn-tab-sterility-swab" onclick="notebook.m7_switchMode('swab')" style="padding: 6px 4px; font-size: 11px;">Surface Swab</button>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- DIRECT INOCULATION CONTROLS -->
+                                            <div id="sterility-ctrl-direct" class="sterility-sub-ctrl">
+                                                <label for="sterility-sample">Pharmaceutical Product:</label>
+                                                <select id="sterility-sample" class="custom-select" onchange="notebook.m6_resetSterility()">
+                                                    <option value="saline">Sterile Saline Injection (Sterile)</option>
+                                                    <option value="eye_drops">Multi-dose Eye Drops (Contaminated)</option>
+                                                </select>
+                                                
+                                                <div style="margin-top: 12px;">
+                                                    <button class="btn-primary" id="btn-sterility-inoc-ftm" style="width: 100%; margin-bottom: 8px; padding: 6px;" onclick="notebook.m6_inoculateDirect('ftm')">
+                                                        <i class="fa-solid fa-pipette"></i> Pipette into FTM
+                                                    </button>
+                                                    <button class="btn-primary" id="btn-sterility-inoc-scdm" style="width: 100%; margin-bottom: 8px; padding: 6px;" onclick="notebook.m6_inoculateDirect('scdm')">
+                                                        <i class="fa-solid fa-pipette"></i> Pipette into SCDM
+                                                    </button>
+                                                    <button class="btn-secondary" id="btn-sterility-incubate-direct" style="width: 100%; padding: 6px;" onclick="notebook.m6_incubateDirect()">
+                                                        <i class="fa-solid fa-hourglass-half"></i> Incubate 14 Days
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- SWAB TESTING CONTROLS -->
+                                            <div id="sterility-ctrl-swab" class="sterility-sub-ctrl hidden">
+                                                <label for="swab-treatment">Surface Treatment:</label>
+                                                <select id="swab-treatment" class="custom-select" onchange="notebook.m7_resetSwab()">
+                                                    <option value="control">Untreated Control</option>
+                                                    <option value="ethanol">70% Ethanol sanitization</option>
+                                                    <option value="bleach">10% Bleach sanitization</option>
+                                                </select>
+                                                
+                                                <div style="margin-top: 12px;">
+                                                    <button class="btn-primary" id="btn-swab-wipe" style="width: 100%; margin-bottom: 8px; padding: 6px;" onclick="notebook.m7_wipeSwab()">
+                                                        <i class="fa-solid fa-broom"></i> Swab 10x10 cm² Surface
+                                                    </button>
+                                                    <button class="btn-primary" id="btn-swab-plate" style="width: 100%; margin-bottom: 8px; padding: 6px;" disabled onclick="notebook.m7_plateSwab()">
+                                                        <i class="fa-solid fa-plate-wheat"></i> Dilute &amp; Inoculate PCA
+                                                    </button>
+                                                    <button class="btn-secondary" id="btn-swab-incubate" style="width: 100%; padding: 6px;" disabled onclick="notebook.m7_incubateSwab()">
+                                                        <i class="fa-solid fa-hourglass-half"></i> Incubate 48 Hours
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- CENTER STAGE AREA -->
+                                        <div class="sterility-stage glass-panel" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+                                            <!-- Direct Inoculation Display Pane -->
+                                            <div id="sterility-stage-direct" class="sterility-sub-stage" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+                                                <div class="tubes-rack" style="display: flex; gap: 40px;">
+                                                    <div class="test-tube-holder" style="display: flex; flex-direction: column; align-items: center;">
+                                                        <div class="ftm-tube" id="tube-ftm" style="width: 24px; height: 150px; border: 2px solid rgba(255,255,255,0.4); border-radius: 0 0 12px 12px; background: rgba(255,255,255,0.05); position: relative; overflow: hidden; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);">
+                                                            <div class="pink-oxidation-ring" id="ring-ftm" style="position: absolute; top: 15px; width: 100%; height: 15px; background: rgba(233,30,99,0.35); filter: blur(2px);"></div>
+                                                            <div class="fluid-growth" id="growth-ftm" style="position: absolute; bottom: 0; width: 100%; height: 110px; background: rgba(255,255,255,0.15); transition: background 1s ease;"></div>
+                                                        </div>
+                                                        <span class="vial-label" style="margin-top: 8px; font-size: 11px; color: var(--text-title);">FTM Tube (Anaerobe)</span>
+                                                    </div>
+                                                    <div class="test-tube-holder" style="display: flex; flex-direction: column; align-items: center;">
+                                                        <div class="scdm-tube" id="tube-scdm" style="width: 24px; height: 150px; border: 2px solid rgba(255,255,255,0.4); border-radius: 0 0 12px 12px; background: rgba(255,255,255,0.05); position: relative; overflow: hidden; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);">
+                                                            <div class="fluid-growth" id="growth-scdm" style="position: absolute; bottom: 0; width: 100%; height: 110px; background: rgba(255,255,255,0.15); transition: background 1s ease;"></div>
+                                                        </div>
+                                                        <span class="vial-label" style="margin-top: 8px; font-size: 11px; color: var(--text-title);">SCDM Tube (Aerobe)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Swab Plating Display Pane -->
+                                            <div id="sterility-stage-swab" class="sterility-sub-stage hidden" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+                                                <div class="swab-workbench-visual" style="display: flex; flex-direction: column; align-items: center;">
+                                                    <div class="petri-dish" id="swab-plate" style="width: 160px; height: 160px; border-radius: 50%; border: 3px solid rgba(255,255,255,0.2); background: rgba(212,175,55,0.05); position: relative; overflow: hidden; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);">
+                                                        <div class="agar-layer" id="swab-agar" style="position: absolute; width: 100%; height: 100%; background: rgba(245,222,179,0.2);"></div>
+                                                        <div class="colony-container" id="swab-colonies" style="position: absolute; width: 100%; height: 100%;"></div>
+                                                    </div>
+                                                    <div class="plate-label" id="swab-plate-lbl" style="margin-top: 8px; font-size: 12px; color: var(--text-title);">PCA Swab Plate</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="sterility-hud" style="position: absolute; bottom: 12px; left: 16px; font-size: 12px;">
+                                                <span class="hud-lbl" style="color: var(--text-muted);">Status Log:</span>
+                                                <span class="hud-val" id="sterility-hud-status" style="color: var(--color-cyan); font-weight: bold;">Select mode and begin test</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB CONTENT: INTERPRETATION GUIDE -->
+                    <div class="tab-content" id="tab-interpretation">
+                        <div class="theory-viewer glass-panel">
+                            <div class="theory-markdown" id="interpretation-content">
+                                <!-- Loaded dynamically from theory.js -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB CONTENT: ASSESSMENT -->
+                    <div class="tab-content" id="tab-assessment">
+                        <div class="assessment-container glass-panel">
+                            <h3>Module Assessment Quiz</h3>
+                            <p>Answer the following technical questions to verify your competence in this standard protocol. Your score here directly contributes to your final certification score.</p>
+                            
+                            <form id="assessment-quiz-form" class="quiz-form">
+                                <!-- Quiz questions loaded dynamically -->
+                            </form>
+                            
+                            <div class="quiz-footer">
+                                <button type="button" id="btn-submit-quiz" class="btn-primary">Submit Answers</button>
+                                <span id="quiz-feedback-msg" class="quiz-feedback"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- FLOATING SIDEBAR: LAB NOTEBOOK -->
+        <aside class="notebook-sidebar" id="lab-notebook-panel">
+            <div class="notebook-header">
+                <h3><i class="fa-solid fa-book"></i> Laboratory Notebook</h3>
+                <button id="btn-close-notebook" class="btn-icon"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="notebook-body">
+                <div class="notebook-nav" style="display: flex; gap: 4px; overflow-x: auto; padding-bottom: 8px; width: 100%;">
+                    <button class="notebook-tab-btn active" data-note="m1" style="padding: 6px 8px; font-size: 11px; flex-shrink: 0;">Label</button>
+                    <button class="notebook-tab-btn" data-note="m2" style="padding: 6px 8px; font-size: 11px; flex-shrink: 0;">DMC</button>
+                    <button class="notebook-tab-btn" data-note="m3" style="padding: 6px 8px; font-size: 11px; flex-shrink: 0;">Plating</button>
+                    <button class="notebook-tab-btn" data-note="m4" style="padding: 6px 8px; font-size: 11px; flex-shrink: 0;">Pathogens</button>
+                    <button class="notebook-tab-btn" data-note="m5" style="padding: 6px 8px; font-size: 11px; flex-shrink: 0;">AET</button>
+                    <button class="notebook-tab-btn" data-note="m6" style="padding: 6px 8px; font-size: 11px; flex-shrink: 0;">Sterility</button>
+                    <button class="notebook-tab-btn" data-note="m7" style="padding: 6px 8px; font-size: 11px; flex-shrink: 0;">Swab</button>
+                </div>
+
+                <!-- Module 1 logs: Food Label Analysis -->
+                <div class="notebook-section active" id="note-sec-m1">
+                    <h4>Food Label Compliance Audit</h4>
+                    <div class="log-sub-card">
+                        <h5>Audit Assessments:</h5>
+                        <div class="note-row">
+                            <span>Orange Juice Label:</span>
+                            <span id="note-m1-juice-status" class="note-val-lbl">Not audited</span>
+                        </div>
+                        <div class="note-row">
+                            <span>Infant Formula Label:</span>
+                            <span id="note-m1-formula-status" class="note-val-lbl">Not audited</span>
+                        </div>
+                        <div class="note-row">
+                            <span>Wheat Flour Label:</span>
+                            <span id="note-m1-flour-status" class="note-val-lbl">Not audited</span>
+                        </div>
+                    </div>
+                    <button class="btn-success-mini btn-submit-log" data-module="1">Verify Label Audits</button>
+                    <div class="log-status-msg" id="log-status-m1">Status: Unverified</div>
+                </div>
+
+                <!-- Module 2 logs: DMC Count -->
+                <div class="notebook-section" id="note-sec-m2">
+                    <h4>Direct Microscopic Count (DMC) Log</h4>
+                    <div class="note-row">
+                        <label>Cells Counted in 5 Grid Squares:</label>
+                        <input type="number" id="note-m2-cells" class="note-input" placeholder="e.g. 45" readonly>
+                    </div>
+                    <div class="note-row">
+                        <label>Dilution Factor Used:</label>
+                        <input type="number" id="note-m2-dilution" class="note-input" value="1" readonly>
+                    </div>
+                    <div class="note-row formula-helper">
+                        <p>Formula: Cells/mL = Count &times; Dilution &times; 50,000</p>
+                    </div>
+                    <div class="note-row">
+                        <label>Your Calculation (Cells/mL):</label>
+                        <input type="text" id="note-m2-calc" class="note-input input-calc" placeholder="Enter calculated value">
+                    </div>
+                    <button class="btn-success-mini btn-submit-log" data-module="2">Verify Calculation</button>
+                    <div class="log-status-msg" id="log-status-m2">Status: Unverified</div>
+                </div>
+
+                <!-- Module 3 logs: Serial Dilutions & SPC Plating -->
+                <div class="notebook-section" id="note-sec-m3">
+                    <h4>Serial Dilutions & SPC Plating Log</h4>
+                    <div class="note-row">
+                        <label>Plating Target Medium:</label>
+                        <span id="note-m3-medium" class="note-val-lbl">-</span>
+                    </div>
+                    <div class="note-row">
+                        <label>Incubator Settings:</label>
+                        <span id="note-m3-incubation" class="note-val-lbl">-</span>
+                    </div>
+                    <div class="note-row">
+                        <label>Plate Dilution Selected:</label>
+                        <span id="note-m3-dil-sel" class="note-val-lbl">-</span>
+                    </div>
+                    <div class="note-row">
+                        <label>Colonies Counted (30-300 rule):</label>
+                        <input type="number" id="note-m3-colonies" class="note-input" placeholder="Count colonies" readonly>
+                    </div>
+                    <div class="note-row formula-helper">
+                        <p>Formula: CFU/mL = Colonies Counted &times; Dilution Factor</p>
+                    </div>
+                    <div class="note-row">
+                        <label>Your Calculation (CFU/mL):</label>
+                        <input type="text" id="note-m3-calc" class="note-input input-calc" placeholder="Enter calculated CFU">
+                    </div>
+                    <button class="btn-success-mini btn-submit-log" data-module="3">Verify Calculation</button>
+                    <div class="log-status-msg" id="log-status-m3">Status: Unverified</div>
+                </div>
+
+                <!-- Module 4 logs: Specialized Pathogen Identification -->
+                <div class="notebook-section" id="note-sec-m4">
+                    <h4>Pathogen Selective Identification Logs</h4>
+                    <div class="log-sub-card">
+                        <h5>Staph aureus Coagulase Test:</h5>
+                        <div class="note-row">
+                            <label>Broth Consistency after Tilt:</label>
+                            <span id="note-m4-coag-status" class="note-val-lbl">Not tested</span>
+                        </div>
+                    </div>
+                    
+                    <div class="log-sub-card">
+                        <h5>Salmonella TSI Slant profile:</h5>
+                        <div class="note-row">
+                            <span>Slant/Butt:</span>
+                            <span id="note-m4-tsi-color" class="note-val-lbl">K/A not run</span>
+                        </div>
+                        <div class="note-row">
+                            <span>Gas/H<sub>2</sub>S:</span>
+                            <span id="note-m4-tsi-gas" class="note-val-lbl">Not run</span>
+                        </div>
+                    </div>
+
+                    <div class="log-sub-card">
+                        <h5>Coliform testing:</h5>
+                        <div class="note-row">
+                            <span>Red colony count (VRBA):</span>
+                            <span id="note-m4-col-vrba" class="note-val-lbl">Uncounted</span>
+                        </div>
+                        <div class="note-row">
+                            <span>Gas in BGLB / EMB green sheen:</span>
+                            <span id="note-m4-col-emb" class="note-val-lbl">Unverified</span>
+                        </div>
+                    </div>
+                    <button class="btn-success-mini btn-submit-log" data-module="4">Verify Logbook</button>
+                    <div class="log-status-msg" id="log-status-m4">Status: Unverified</div>
+                </div>
+
+                <!-- Module 5 logs: AET Preservative Efficacy -->
+                <div class="notebook-section" id="note-sec-m5">
+                    <h4>AET Preservative Efficacy Log</h4>
+                    <div class="log-sub-card">
+                        <h5>AET Parameters:</h5>
+                        <div class="note-row">
+                            <span>Challenge Organism:</span>
+                            <span id="note-m5-organism" class="note-val-lbl">Not run</span>
+                        </div>
+                        <div class="note-row">
+                            <span>Neutralizer Used:</span>
+                            <span id="note-m5-neutralizer" class="note-val-lbl">Not run</span>
+                        </div>
+                    </div>
+                    <div class="log-sub-card" style="margin-top: 10px;">
+                        <h5>Efficacy Calculations:</h5>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 6px;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); text-align: left; color: var(--text-title);">
+                                    <th style="padding: 4px;">Time</th>
+                                    <th style="padding: 4px;">CFU/mL</th>
+                                    <th style="padding: 4px;">Log Red.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 4px; color: var(--text-body);">Day 0</td>
+                                    <td style="padding: 4px;"><input type="text" id="note-m5-d0-cfu" class="note-input" style="width: 65px; padding: 2px; height: 20px; font-size: 11px;" placeholder="Count..." /></td>
+                                    <td style="padding: 4px; color: var(--text-muted);">-</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 4px; color: var(--text-body);">Day 7</td>
+                                    <td style="padding: 4px;"><input type="text" id="note-m5-d7-cfu" class="note-input" style="width: 65px; padding: 2px; height: 20px; font-size: 11px;" placeholder="Count..." /></td>
+                                    <td style="padding: 4px;"><input type="text" id="note-m5-d7-red" class="note-input" style="width: 45px; padding: 2px; height: 20px; font-size: 11px;" placeholder="Log..." /></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 4px; color: var(--text-body);">Day 14</td>
+                                    <td style="padding: 4px;"><input type="text" id="note-m5-d14-cfu" class="note-input" style="width: 65px; padding: 2px; height: 20px; font-size: 11px;" placeholder="Count..." /></td>
+                                    <td style="padding: 4px;"><input type="text" id="note-m5-d14-red" class="note-input" style="width: 45px; padding: 2px; height: 20px; font-size: 11px;" placeholder="Log..." /></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 4px; color: var(--text-body);">Day 28</td>
+                                    <td style="padding: 4px;"><input type="text" id="note-m5-d28-cfu" class="note-input" style="width: 65px; padding: 2px; height: 20px; font-size: 11px;" placeholder="Count..." /></td>
+                                    <td style="padding: 4px;"><input type="text" id="note-m5-d28-red" class="note-input" style="width: 45px; padding: 2px; height: 20px; font-size: 11px;" placeholder="Log..." /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="btn-success-mini btn-submit-log" data-module="5">Verify AET Calculations</button>
+                    <div class="log-status-msg" id="log-status-m5">Status: Unverified</div>
+                </div>
+
+                <!-- Module 6 logs: Sterility Testing -->
+                <div class="notebook-section" id="note-sec-m6">
+                    <h4>Direct Sterility Log</h4>
+                    <div class="log-sub-card">
+                        <h5>Direct Sterility Log:</h5>
+                        <div class="note-row">
+                            <span>FTM Tube Growth:</span>
+                            <span id="note-m6-ftm" class="note-val-lbl">Not inoculated</span>
+                        </div>
+                        <div class="note-row">
+                            <span>SCDM Tube Growth:</span>
+                            <span id="note-m6-scdm" class="note-val-lbl">Not inoculated</span>
+                        </div>
+                    </div>
+                    <button class="btn-success-mini btn-submit-log" data-module="6">Verify Sterility Logs</button>
+                    <div class="log-status-msg" id="log-status-m6">Status: Unverified</div>
+                </div>
+
+                <!-- Module 7 logs: Surface Swab Testing -->
+                <div class="notebook-section" id="note-sec-m7">
+                    <h4>Surface Swab Log</h4>
+                    <div class="log-sub-card">
+                        <h5>Surface Swab Log:</h5>
+                        <div class="note-row">
+                            <span>Sanitization Treatment:</span>
+                            <span id="note-m7-swab-treatment" class="note-val-lbl">Not tested</span>
+                        </div>
+                        <div class="note-row">
+                            <span>Colonies Counted (CFU):</span>
+                            <span id="note-m7-swab-count" class="note-val-lbl">Not tested</span>
+                        </div>
+                        <div class="note-row" style="margin-top: 6px; display: flex; align-items: center; justify-content: space-between;">
+                            <span>Contam. (CFU/cm²):</span>
+                            <input type="text" id="note-m7-swab-calc" class="note-input" style="width: 80px; padding: 4px;" placeholder="Calculation..." />
+                        </div>
+                    </div>
+                    <button class="btn-success-mini btn-submit-log" data-module="7">Verify Swab Logs</button>
+                    <div class="log-status-msg" id="log-status-m7">Status: Unverified</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MODAL WINDOW: CERTIFICATE OF COMPLETION -->
+        <div class="modal-overlay" id="cert-modal">
+            <div class="certificate-glass-container">
+                <button id="btn-close-cert" class="btn-icon cert-close"><i class="fa-solid fa-xmark"></i></button>
+                <div class="certificate-frame">
+                    <div class="cert-no">Certificate No: <span id="cert-number">FSSAI-MAL-20260606-0000</span></div>
+                    <div class="cert-header">
+                        <h2>FOOD SAFETY STANDARDS AUTHORITY</h2>
+                        <h3>MICROBIAL QUALITY CONTROL IN FOOD AND PHARMACEUTICAL INDUSTRIES</h3>
+                    </div>
+                    
+                    <div class="cert-body">
+                        <p class="cert-certifies">This certifies that the Laboratory QA Specialist</p>
+                        <h1 id="cert-student-name">Trial</h1>
+                        <p class="cert-text">has successfully completed the practical virtual simulation and theoretical examinations for</p>
+                        <h3>Advanced Microbiological Enumeration & Food Analysis</h3>
+                        <p class="cert-compliance">Demonstrated competence in food label regulation audits, Petroff-Hausser microscopic counting, SPC/APC viable dilutions, pathogenic selective media assays (Coagulase/TSI/VRBA), USP &lt;51&gt; AET preservative efficacy assays, USP &lt;71&gt; direct inoculation sterility testing, and environmental surface swab auditing in compliance with <strong>FSSAI 15.001:2024</strong> and <strong>ISO 4833</strong> standards.</p>
+                    </div>
+
+                    <div class="cert-footer">
+                        <div class="cert-signature-box">
+                            <span class="cert-sig-line"><em>Trial</em></span>
+                            <span class="cert-sig-title">Virtual Lab Director</span>
+                        </div>
+                        <div class="cert-score-box">
+                            <span class="cert-score-val" id="cert-final-score">92%</span>
+                            <span class="cert-sig-title">Passing Examination Score</span>
+                        </div>
+                        <div class="cert-signature-box">
+                            <span class="cert-sig-line" id="cert-date">2026-06-03</span>
+                            <span class="cert-sig-title">Date of Examination</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-actions" style="align-items: center; gap: 12px; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center;">
+                        <span style="font-size: 13px; color: var(--text-muted); margin-right: 8px;">Student Name:</span>
+                        <input type="text" id="cert-name-input-field" class="cert-name-input" placeholder="Enter student name..." value="Trial" oninput="document.getElementById('cert-student-name').textContent = this.value || 'Trial'; if (window.app) window.app.saveSession();" />
+                    </div>
+                    <button class="btn-primary" onclick="notebook.downloadCertificateImage()"><i class="fa-solid fa-download"></i> Download PNG</button>
+                    <button class="btn-secondary" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Certificate</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL WINDOW: KEYBOARD SHORTCUTS HELP -->
+        <div class="modal-overlay" id="help-modal">
+            <div class="certificate-glass-container help-modal-container">
+                <button id="btn-close-help" class="btn-icon cert-close"><i class="fa-solid fa-xmark"></i></button>
+                <div class="help-content">
+                    <h3><i class="fa-solid fa-keyboard"></i> Accessible Keyboard Shortcuts</h3>
+                    <ul class="help-list">
+                        <li class="help-item">
+                            <span>Pan Microscope Stage (Module 1):</span>
+                            <kbd class="kbd-key">Arrow Keys</kbd>
+                        </li>
+                        <li class="help-item">
+                            <span>Adjust Microscope Focus (Module 1):</span>
+                            <kbd class="kbd-key">F / + / -</kbd>
+                        </li>
+                        <li class="help-item">
+                            <span>Tally Cell / Colony Count (Modules 1 & 2):</span>
+                            <kbd class="kbd-key">Spacebar</kbd>
+                        </li>
+                        <li class="help-item">
+                            <span>Select Dilution Tube (Module 2):</span>
+                            <kbd class="kbd-key">0 - 5</kbd>
+                        </li>
+                        <li class="help-item">
+                            <span>Pipette Aspirate & Dispense (Module 2):</span>
+                            <kbd class="kbd-key">E / Enter</kbd>
+                        </li>
+                        <li class="help-item">
+                            <span>Tilt Coagulase Broth Tube (Module 3):</span>
+                            <kbd class="kbd-key">T</kbd>
+                        </li>
+                        <li class="help-item">
+                            <span>Toggle Autoclave Vent Valve (Module 4):</span>
+                            <kbd class="kbd-key">V</kbd>
+                        </li>
+                        <li class="help-item">
+                            <span>Open / Close Lab Notebook:</span>
+                            <kbd class="kbd-key">N</kbd>
+                        </li>
+                        <li class="help-item last-item">
+                            <span>Close Active Modals / Overlay:</span>
+                            <kbd class="kbd-key">Escape</kbd>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Application Script entry point -->
+    <script type="module" src="js/app.js?v=1.4"></script>
+</body>
+</html>
